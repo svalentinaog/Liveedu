@@ -1,4 +1,13 @@
 {
+  "compilerOptions": {
+    "target": "es6", // O el objetivo que necesites
+    "module": "commonjs", // O el módulo que necesites
+    "strict": true, // Puedes mantener esto en true si deseas otras comprobaciones estrictas
+    "noImplicitAny": false, // Permite el uso de `any`
+    "esModuleInterop": true, // Para compatibilidad con módulos de ES
+    "skipLibCheck": true, // Opcional, omite la comprobación de archivos de definición de biblioteca
+    "forceConsistentCasingInFileNames": true // Para asegurar consistencia en nombres de archivos
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
