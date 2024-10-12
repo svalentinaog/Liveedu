@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { OnboardingContents } from "../models/OnboardingContent";
+import { OnboardingContent } from "../models/OnboardingContent";
 
 export default function useOnboardingViewModel() {
   const [currentScreen, setCurrentScreen] = useState<number>(0);
 
-  const totalScreens = OnboardingContents.length;
+  const totalScreens = OnboardingContent.length;
 
   const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ export default function useOnboardingViewModel() {
 
   return {
     currentScreen,
-    screenContent: OnboardingContents[currentScreen],
+    screenContent: OnboardingContent[currentScreen],
     nextScreen,
     goToScreen,
     totalScreens,

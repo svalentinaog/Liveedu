@@ -43,7 +43,11 @@ export default function InputPasswordField({
               onClick={handleClickShowPassword}
               onMouseDown={handleMouseDownPassword}
             >
-              {showPassword ? <VisibilityOff /> : <Visibility />}
+              {showPassword ? (
+                <VisibilityOff sx={{ color: "#bfc3fc" }} />
+              ) : (
+                <Visibility sx={{ color: "#bfc3fc" }} />
+              )}
             </IconButton>
           </InputAdornment>
         }

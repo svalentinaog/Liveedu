@@ -7,7 +7,7 @@ import {
 } from "../models/slices/UserSlice";
 import { UserStateKeys } from "../models/states/UserState";
 
-export default function UserAuth() {
+export default function useUserAuthentication() {
   const dispatch = useDispatch();
 
   const user = useSelector((state: RootState) => state.user);
@@ -17,15 +17,15 @@ export default function UserAuth() {
       dispatch(updateUserStateByKey({ key: key, value: event.target.value }));
     };
   };
-  const sendSigUpForm = () => {
+  const handleSignUpForm = () => {
     // send form data to server
     // const { signUp_email, signUp_name, signUp_phone, signUp_password } = user;
-    // HACER FETCH/AXIOS.POST Y MANDAR OBJETO {signUp_email, signUp_name, signUp_phone, signUp_password }
+    // FETCH/AXIOS.POST Y MANDAR OBJETO {signUp_email, signUp_name, signUp_phone, signUp_password }
     // DISPATCH
     dispatch(dispatch(userRegistered()));
   };
   return {
     user,
-    methods: { updateField, sendSigUpForm },
+    methods: { updateField, handleSignUpForm },
   };
 }

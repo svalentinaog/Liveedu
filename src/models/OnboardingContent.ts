@@ -4,7 +4,7 @@ interface IOnboardingContent {
   image: string;
 }
 
-export const OnboardingContents: IOnboardingContent[] = [
+export const OnboardingContent: IOnboardingContent[] = [
   {
     title: "Explore new courses",
     description:
