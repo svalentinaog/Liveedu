@@ -13,7 +13,7 @@ export default function useOnboardingViewModel() {
     if (currentScreen < totalScreens - 1) {
       setCurrentScreen(currentScreen + 1);
     } else {
-      navigate("/sign-up");
+      navigate("/sign-in");
     }
   };
 
