@@ -62,6 +62,8 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
             sx={{
               width: { xs: "100%", sm: "90%" },
               fontSize: { xs: "1.65em", sm: "3em" },
+              lineHeight: "normal",
+              letterSpacing: 0,
               fontWeight: 700,
             }}
           >
