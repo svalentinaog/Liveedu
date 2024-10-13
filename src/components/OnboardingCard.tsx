@@ -25,14 +25,14 @@ const gridElements = {
 
 export default function OnboardingCard({ screen }: IOnboardingCardProps) {
   return (
-    <Grid container spacing={2} sx={{ height: "80vh" }}>
+    <Grid container spacing={2}>
       {/* Section 1 */}
       <Grid
         size={{ sm: 6, xs: 12 }}
         sx={{
           ...commonStyles,
           alignItems: "center",
-          padding: 4,
+          padding: { xs: 0, sm: 4 },
         }}
       >
         <img src={screen.image} alt={screen.title} />

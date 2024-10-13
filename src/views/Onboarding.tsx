@@ -25,37 +25,44 @@ export default function Onboarding() {
   // end
 
   return (
-    <Grid container spacing={2} sx={{ height: "80vh", padding: 2 }}>
+    <Grid container spacing={2} sx={{ height: "100vh", padding: 2 }}>
       <Grid
-        size={{ sm: 12, xs: 12 }}
-        sx={{
-          alignItems: "center",
-        }}
+        container
+        spacing={6}
+        sx={{ ...commonStyles, height: "100%", width: "100%" }}
       >
-        <OnboardingCard key={currentScreen} screen={screenContent} />
-      </Grid>
-
-      <Grid
-        size={{ sm: 12, xs: 12 }}
-        sx={{
-          ...commonStyles,
-          alignItems: "center",
-        }}
-      >
-        <PaginationPoints
-          totalPoints={totalScreens}
-          currentScreen={currentScreen}
-          goToScreen={goToScreen}
-        />
-
-        <Button
-          onClick={nextScreen}
-          size="large"
-          sx={{ ...btnSubmit, width: "100%" }}
-          variant="contained"
+        <Grid
+          size={{ sm: 12, xs: 12 }}
+          sx={{
+            alignItems: "center",
+          }}
         >
-          Next
-        </Button>
+          <OnboardingCard key={currentScreen} screen={screenContent} />
+        </Grid>
+
+        <Grid
+          size={{ sm: 12, xs: 12 }}
+          sx={{
+            ...commonStyles,
+            alignItems: { xs: "start", sm: "center" },
+            gap: 2,
+          }}
+        >
+          <PaginationPoints
+            totalPoints={totalScreens}
+            currentScreen={currentScreen}
+            goToScreen={goToScreen}
+          />
+
+          <Button
+            onClick={nextScreen}
+            size="large"
+            sx={{ ...btnSubmit, width: "100%" }}
+            variant="contained"
+          >
+            Next
+          </Button>
+        </Grid>
       </Grid>
     </Grid>
   );
