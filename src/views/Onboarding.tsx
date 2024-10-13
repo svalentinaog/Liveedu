@@ -1,22 +1,62 @@
+import { Grid } from "@mui/system";
 import OnboardingCard from "../components/OnboardingCard";
 import PaginationPoints from "../components/PaginationPoints";
 import useOnboardingViewModel from "../viewmodels/useOnboarding";
+import { Button } from "@mui/material";
 
 export default function Onboarding() {
   const { currentScreen, screenContent, nextScreen, goToScreen, totalScreens } =
     useOnboardingViewModel();
 
+  // Styles
+  const commonStyles = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  };
+
+  const btnSubmit = {
+    background: "linear-gradient(#bfc3fc, #a2c3fc)",
+    textTransform: "capitalize",
+    borderRadius: "16px",
+    boxShadow: "none",
+    padding: 1.75,
+  };
+  // end
+
   return (
-    <div>
-      <OnboardingCard key={currentScreen} screen={screenContent} />
+    <Grid container spacing={2} sx={{ height: "80vh", padding: 2 }}>
+      <Grid
+        size={{ sm: 12, xs: 12 }}
+        sx={{
+          alignItems: "center",
+        }}
+      >
+        <OnboardingCard key={currentScreen} screen={screenContent} />
+      </Grid>
 
-      <PaginationPoints
-        totalPoints={totalScreens}
-        currentScreen={currentScreen}
-        goToScreen={goToScreen}
-      />
+      <Grid
+        size={{ sm: 12, xs: 12 }}
+        sx={{
+          ...commonStyles,
+          alignItems: "center",
+        }}
+      >
+        <PaginationPoints
+          totalPoints={totalScreens}
+          currentScreen={currentScreen}
+          goToScreen={goToScreen}
+        />
 
-      <button onClick={nextScreen}>Next</button>
-    </div>
+        <Button
+          onClick={nextScreen}
+          size="large"
+          sx={{ ...btnSubmit, width: "100%" }}
+          variant="contained"
+        >
+          Next
+        </Button>
+      </Grid>
+    </Grid>
   );
 }
