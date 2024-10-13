@@ -15,17 +15,11 @@ const commonStyles = {
   flexDirection: "column",
   justifyContent: "center",
 };
-
-const gridElements = {
-  width: "100%",
-  maxWidth: "400px",
-  gap: 2,
-};
 // end Styles
 
 export default function OnboardingCard({ screen }: IOnboardingCardProps) {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={6}>
       {/* Section 1 */}
       <Grid
         size={{ sm: 6, xs: 12 }}
@@ -33,9 +27,19 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
           ...commonStyles,
           alignItems: "center",
           padding: { xs: 0, sm: 4 },
+          height: { xs: "500px", sm: "800px" },
         }}
       >
-        <img src={screen.image} alt={screen.title} />
+        <Box
+          component="img"
+          sx={{
+            width: { xs: "100%", sm: "auto" },
+            height: { xs: "100%", sm: "100%" },
+            objectFit: { xs: "scale-down", sm: "contain" },
+          }}
+          src={screen.image}
+          alt={screen.title}
+        />
       </Grid>
 
       {/* Section 2 */}
@@ -51,13 +55,23 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
         <Box
           sx={{
             ...commonStyles,
-            ...gridElements,
+            gap: 2,
           }}
         >
-          <Typography variant="h4" sx={{ fontWeight: 700 }}>
+          <Typography
+            sx={{
+              width: { xs: "100%", sm: "90%" },
+              fontSize: { xs: "1.65em", sm: "3em" },
+              fontWeight: 700,
+            }}
+          >
             {screen.title}
           </Typography>
-          <Typography variant="body1">{screen.description}</Typography>
+          <Typography
+            sx={{ width: "70%", fontSize: { xs: "0.95em", sm: "1.5em" } }}
+          >
+            {screen.description}
+          </Typography>
         </Box>
       </Grid>
     </Grid>

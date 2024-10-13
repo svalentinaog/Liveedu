@@ -1,8 +1,28 @@
+import { Box } from "@mui/system";
+
 interface PaginationPointsProps {
   totalPoints: number;
   currentScreen: number;
   goToScreen: (screenIndex: number) => void;
 }
+
+// Styles
+const stylesPagination = {
+  paginationContainer: {
+    display: "flex",
+    gap: { xs: "10px", sm: "15px" },
+  },
+  paginationPoint: (isActive: boolean) => ({
+    width: isActive ? { xs: "30px", sm: "50px" } : { xs: "10px", sm: "15px" },
+    height: { xs: "10px", sm: "15px" },
+    background: "linear-gradient(#bfc3fc, #a2c3fc)",
+    borderRadius: isActive
+      ? { xs: "50px", sm: "50px" }
+      : { xs: "50%", sm: "50%" },
+    transition: "all 0.3s ease",
+    cursor: "pointer",
+  }),
+};
 
 export default function PaginationPoints({
   totalPoints,
@@ -10,16 +30,17 @@ export default function PaginationPoints({
   goToScreen,
 }: PaginationPointsProps) {
   return (
-    <div className="pagination-container">
-      {Array.from({ length: totalPoints }).map((_, index) => (
-        <div
-          key={index}
-          className={`pagination-point ${
-            currentScreen === index ? "active" : ""
-          }`}
-          onClick={() => goToScreen(index)}
-        ></div>
-      ))}
-    </div>
+    <Box sx={stylesPagination.paginationContainer}>
+      {Array.from({ length: totalPoints }).map((_, index) => {
+        const isActive = currentScreen === index;
+        return (
+          <Box
+            key={index}
+            sx={stylesPagination.paginationPoint(isActive)}
+            onClick={() => goToScreen(index)}
+          />
+        );
+      })}
+    </Box>
   );
 }
