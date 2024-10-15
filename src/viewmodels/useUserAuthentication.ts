@@ -18,10 +18,11 @@ export default function useUserAuthentication() {
     };
   };
   const handleSignUpForm = () => {
+    // * Aqui tengo pendiente:
     // send form data to server
     // const { signUp_email, signUp_name, signUp_phone, signUp_password } = user;
     // FETCH/AXIOS.POST Y MANDAR OBJETO {signUp_email, signUp_name, signUp_phone, signUp_password }
-    // DISPATCH
+    // DISPATCH 😎
     dispatch(dispatch(userRegistered()));
   };
   return {

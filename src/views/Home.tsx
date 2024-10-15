@@ -1,7 +1,13 @@
+import { Box } from "@mui/system";
+import Layout from "../components/Layout";
+import { Typography } from "@mui/material";
+
 export default function Home() {
   return (
-    <div>
-      <h1>Hola soy la pagina de inicio</h1>
-    </div>
+    <Layout>
+      <Box>
+        <Typography variant="h1">Home</Typography>
+      </Box>
+    </Layout>
   );
 }

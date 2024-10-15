@@ -6,7 +6,7 @@ interface PaginationPointsProps {
   goToScreen: (screenIndex: number) => void;
 }
 
-// Styles
+// Styles (Pendiente mover a mui.ts)
 const stylesPagination = {
   paginationContainer: {
     display: "flex",
@@ -23,6 +23,7 @@ const stylesPagination = {
     cursor: "pointer",
   }),
 };
+// end Styles
 
 export default function PaginationPoints({
   totalPoints,

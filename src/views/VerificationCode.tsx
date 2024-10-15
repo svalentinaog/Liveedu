@@ -1,39 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { CodeInputContainer, CodeInput, commonStyles, gridElements, formField } from "../styles/mui";
 import { Grid } from '@mui/system';
 import { Link } from 'react-router-dom';
+import { useVerificationCode } from '../viewmodels/useVerification';
 
 export default function VerificationCode() {
-    const [code, setCode] = useState<string[]>(['', '', '', '']);
-    const inputRefs = [useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null)];
-
-    const handleInputChange = (index: number, value: string) => {
-        if (value.length <= 1 && /^\d?$/.test(value)) {
-            const newCode = [...code];
-            newCode[index] = value;
-            setCode(newCode);
-
-            // Si hay un valor ingresado y no estamos en el último input, mueve el foco al siguiente
-            if (value !== '' && index < 3) {
-                inputRefs[index + 1].current?.focus();
-            }
-        }
-    };
-
-    const handleKeyPress = (index: number, key: string) => {
-        // Si el input actual está vacío, mueve el foco al anterior al presionar Backspace
-        if (key === 'Backspace') {
-            if (index > 0 && code[index] === '') {
-                inputRefs[index - 1].current?.focus();
-            }
-        }
-    };
-
-    useEffect(() => {
-        // Al cargar el componente, enfocar el primer input
-        inputRefs[0].current?.focus();
-    }, []);
+    const { code, inputRefs, handleInputChange, handleKeyPress } = useVerificationCode();
 
     return (
         <Grid container spacing={2}>
