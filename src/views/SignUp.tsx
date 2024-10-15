@@ -95,6 +95,10 @@ export default function SignUp() {
           sx={{
             ...commonStyles,
             ...gridElements,
+            width: "100%",
+            padding: `0 16px 16px 16px`, 
+            bottom: { xs: 0, md: "auto", sm: "auto" },
+            position: { xs: "fixed", md: "static", sm: "static" },
           }}
         >
           <Button
