@@ -97,69 +97,66 @@ export const CodeInputContainer = styled(Box)({
 export const CodeInput = styled(TextField)({
     width: '60px',
     height: '60px',
-    borderRadius: '16px', 
+    borderRadius: '16px',
     '& input': {
         textAlign: 'center',
         fontSize: '1.5em',
         padding: '0.5em',
     },
     '& .MuiOutlinedInput-root': {
-        borderRadius: '16px', 
+        borderRadius: '16px',
     },
 });
 
 // * SignUp/SignIn pages STYLED 
-
-
 export const SignUpContainer = styled(Grid)({
     display: "flex",
     minHeight: "100vh",
-  });
-  
- 
-  export const Section1 = styled(Grid)(({ theme }: { theme: Theme }) => ({
+});
+
+export const Section1 = styled(Grid)(({ theme }: { theme: Theme }) => ({
     height: "100vh",
     display: "block",
     [theme.breakpoints.down("sm")]: {
-      display: "none",
+        display: "none",
     },
-  }));
-  
-  export const Section2 = styled(Grid)(({ theme }: { theme: Theme }) => ({
+}));
+
+export const Section2 = styled(Grid)(({ theme }: { theme: Theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     padding: theme.spacing(2),
     gap: theme.spacing(6),
-  }));
-  
-  
-  export const GradientBox = styled(Box)(({ theme }) => ({
+}));
+
+
+export const GradientBox = styled(Box)(({ theme }) => ({
     height: "100%",
     background: "linear-gradient(#bfc3fc, #a2c3fc)",
     borderRadius: "0 150px 150px 0",
-  }));
-  
-  export const ContentBox = styled(Box)({
+}));
+
+export const ContentBox = styled(Box)({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     gap: "1.5rem",
     width: "100%",
     maxWidth: "400px",
-  });
-  
-  export const StyledFormControl = styled(FormControl)({
+});
+
+export const StyledFormControl = styled(FormControl)({
     display: "flex",
     flexDirection: "column",
     gap: "1.5rem",
     width: "100%",
-  });
-  
-  export const StyledButton = styled(Button)({
+});
+
+export const StyledButton = styled(Button)({
     background: "linear-gradient(#bfc3fc, #a2c3fc)",
     textTransform: "capitalize",
     borderRadius: "16px",
     boxShadow: "none",
     padding: "1.75rem",
-  });
+});
