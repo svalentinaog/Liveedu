@@ -21,7 +21,7 @@ export default function SignUp() {
         size={{ sm: 6 }}
         sx={{
           ...commonStyles,
-          height: {xs: "100%", md: "100vh", sm: "100vh"},
+          height: {xs: "90vh", md: "100vh", sm: "100vh"},
           display: { sm: "block", xs: "none" },
         }}
       >
@@ -42,7 +42,7 @@ export default function SignUp() {
           flexDirection: "column",
           justifyContent: { xs: "space-between", md: "center", sm: "center" },
           alignItems: "center",
-          minHeight: {xs: "100%", md: "100vh", sm: "100vh"},
+          minHeight: {xs: "90vh", md: "100vh", sm: "100vh"},
           padding: 2,
           gap: { xs: 0, md: 6, sm: 6 },
         }}

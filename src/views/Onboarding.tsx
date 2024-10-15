@@ -11,14 +11,14 @@ export default function Onboarding() {
     useOnboardingViewModel();
 
   return (
-    <Grid container spacing={2} sx={{ height: {xs: "100%", md: "100vh", sm: "100vh"}, boxSizing: "border-box" }}>
+    <Grid container spacing={2} sx={{ height: {xs: "90vh", md: "100vh", sm: "100vh"}, boxSizing: "border-box" }}>
       <Grid sx={{
         display: "flex",
         flexDirection: "column",
         justifyContent: { xs: "space-between", md: "center", sm: "center" },
         alignItems: "center",
         width: "100%",
-        minHeight: {xs: "100%", md: "100vh", sm: "100vh"},
+        minHeight: {xs: "90vh", md: "100vh", sm: "100vh"},
         gap: { xs: 4, md: 6, sm: 6 },
         }}>
 
