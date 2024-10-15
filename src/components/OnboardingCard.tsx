@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import { Box, Grid } from "@mui/system";
+import { commonStyles } from "../styles/mui";
 
 interface IOnboardingCardProps {
   screen: {
@@ -8,14 +9,6 @@ interface IOnboardingCardProps {
     image: string;
   };
 }
-
-// Styles
-const commonStyles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-};
-// end Styles
 
 export default function OnboardingCard({ screen }: IOnboardingCardProps) {
   return (
@@ -26,8 +19,8 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
         sx={{
           ...commonStyles,
           alignItems: "center",
-          padding: { xs: 0, sm: 4 },
-          height: { xs: "500px", sm: "800px" },
+          padding: { xs: 0, md: 0, sm: 4 },
+          height: { xs: "500px", md: "500px" , sm: "800px" },
         }}
       >
         <Box

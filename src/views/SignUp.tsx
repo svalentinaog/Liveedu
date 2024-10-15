@@ -1,52 +1,13 @@
 import { Link } from "react-router-dom";
 import { Box, Grid } from "@mui/system";
 import { Button, FormControl, TextField, Typography } from "@mui/material";
+import { commonStyles, gridElements, formField, btnSubmit } from "../styles/mui";
+
 import InputPasswordField from "../components/InputPasswordField";
 import useUserAuthentication from "../viewmodels/useUserAuthentication";
 
 export default function SignUp() {
   const { user, methods } = useUserAuthentication();
-
-  // Styles
-  const formField = {
-    borderRadius: "16px",
-    "& .MuiOutlinedInput-root": {
-      borderRadius: "16px",
-    },
-    "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#bfc3fc",
-    },
-    "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#a2c3fc",
-    },
-    "&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#a2c3fc",
-    },
-    "& .MuiInputBase-input": {
-      backgroundColor: "white",
-    },
-  };
-
-  const commonStyles = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-  };
-
-  const gridElements = {
-    width: "100%",
-    maxWidth: "400px",
-    gap: 2,
-  };
-
-  const btnSubmit = {
-    background: "linear-gradient(#bfc3fc, #a2c3fc)",
-    textTransform: "capitalize",
-    borderRadius: "16px",
-    boxShadow: "none",
-    padding: 1.75,
-  };
-  // end Styles
 
   return (
     <Grid container spacing={2}>

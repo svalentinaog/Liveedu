@@ -4,29 +4,14 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import OnboardingCard from "../components/OnboardingCard";
 import PaginationPoints from "../components/PaginationPoints";
 import useOnboardingViewModel from "../viewmodels/useOnboarding";
+import { commonStyles, btnSubmit } from "../styles/mui";
 
 export default function Onboarding() {
   const { currentScreen, screenContent, nextScreen, goToScreen, totalScreens } =
     useOnboardingViewModel();
 
-  // Styles
-  const commonStyles = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-  };
-
-  const btnSubmit = {
-    background: "linear-gradient(#bfc3fc, #a2c3fc)",
-    textTransform: "capitalize",
-    borderRadius: "16px",
-    boxShadow: "none",
-    padding: 1.75,
-  };
-  // end
-
   return (
-    <Grid container spacing={2} sx={{ height: "100vh", padding: 2 }}>
+    <Grid container spacing={2} sx={{ height: "100vh", paddingTop: { xs: 2, md: 4, sm: 4}, boxSizing: "border-box" }}>
       <Grid sx={{ ...commonStyles, height: "100%", width: "100%", gap: 4 }}>
         {/* Screens */}
         <Grid
