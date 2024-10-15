@@ -130,13 +130,6 @@ export const Section2 = styled(Grid)(({ theme }: { theme: Theme }) => ({
     gap: theme.spacing(6),
 }));
 
-
-export const GradientBox = styled(Box)(({ theme }) => ({
-    height: "100%",
-    background: "linear-gradient(#bfc3fc, #a2c3fc)",
-    borderRadius: "0 150px 150px 0",
-}));
-
 export const ContentBox = styled(Box)({
     display: "flex",
     flexDirection: "column",
