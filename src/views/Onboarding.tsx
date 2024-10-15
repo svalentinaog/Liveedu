@@ -11,7 +11,7 @@ export default function Onboarding() {
     useOnboardingViewModel();
 
   return (
-    <Grid container spacing={2} sx={{ height: "100vh", paddingTop: { xs: 2, md: 4, sm: 4}, boxSizing: "border-box" }}>
+    <Grid container spacing={2} sx={{ height: "100vh", boxSizing: "border-box" }}>
       <Grid sx={{ ...commonStyles, height: "100%", width: "100%", gap: 4 }}>
         {/* Screens */}
         <Grid
@@ -30,8 +30,10 @@ export default function Onboarding() {
             ...commonStyles,
             alignItems: { xs: "start", sm: "center" },
             gap: 4,
-            width: "auto",
+            width: "100%",
             bottom: 0,
+            position: "fixed",
+            padding: 2,
           }}
         >
           {/* Points */}

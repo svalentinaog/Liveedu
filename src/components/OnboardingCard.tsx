@@ -12,7 +12,7 @@ interface IOnboardingCardProps {
 
 export default function OnboardingCard({ screen }: IOnboardingCardProps) {
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={2}>
       {/* Section 1 */}
       <Grid
         size={{ sm: 6, xs: 12 }}
@@ -20,7 +20,7 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
           ...commonStyles,
           alignItems: "center",
           padding: { xs: 0, md: 0, sm: 4 },
-          height: { xs: "500px", md: "500px" , sm: "800px" },
+          height: { xs: "300px", md: "500px" , sm: "800px" },
         }}
       >
         <Box
@@ -42,6 +42,7 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
           ...commonStyles,
           alignItems: "center",
           gap: 6,
+          padding: 2,
         }}
       >
         {/* Content */}
