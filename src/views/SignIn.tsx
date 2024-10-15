@@ -83,13 +83,14 @@ export default function SignIn() {
           sx={{
             ...commonStyles,
             ...gridElements,
-            width: "100%",
             padding: `0 16px 16px 16px`, 
             bottom: { xs: 0, md: "auto", sm: "auto" },
             position: { xs: "fixed", md: "static", sm: "static" },
           }}
         >
-          <Button size="large" sx={btnSubmit} variant="contained">
+          <Button size="large" sx={{ ...btnSubmit,
+              width: "100%"
+            }} variant="contained">
             Login
           </Button>
 
