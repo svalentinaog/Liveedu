@@ -19,7 +19,7 @@ export default function Onboarding() {
         alignItems: "center",
         width: "100%",
         minHeight: "100vh",
-        gap: { xs: 0, md: 6, sm: 6 },
+        gap: { xs: 4, md: 6, sm: 6 },
         }}>
 
         {/* Screens */}
@@ -30,7 +30,7 @@ export default function Onboarding() {
             flexDirection: "column",
             justifyContent: { xs: "flex-end", md: "center", sm: "center" },
             alignItems: "center",
-            height: { xs: "70vh", md: "100%", sm: "100%" },
+            height: { xs: "100%", md: "100%", sm: "100%" },
           }}
         >
           <OnboardingCard key={currentScreen} screen={screenContent} />
