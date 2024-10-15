@@ -30,7 +30,7 @@ export default function Onboarding() {
             flexDirection: "column",
             justifyContent: { xs: "flex-end", md: "center", sm: "center" },
             alignItems: "center",
-            height: { xs: "80vh", md: "100%", sm: "100%" },
+            height: { xs: "70vh", md: "100%", sm: "100%" },
           }}
         >
           <OnboardingCard key={currentScreen} screen={screenContent} />

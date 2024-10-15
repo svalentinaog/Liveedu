@@ -51,7 +51,7 @@ export default function SignIn() {
           sx={{
             ...commonStyles,
             ...gridElements,
-            height: { xs: "80vh", md: "auto", sm: "auto" },
+            height: { xs: "70vh", md: "auto", sm: "auto" },
           }}
         >
           <Box
