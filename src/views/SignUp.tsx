@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { Box, Grid } from "@mui/system";
 import { Button, FormControl, TextField, Typography } from "@mui/material";
-import { commonStyles, gridElements, formField, btnSubmit } from "../styles/mui";
+import {
+  commonStyles,
+  gridElements,
+  formField,
+  btnSubmit,
+} from "../styles/mui";
 
 import InputPasswordField from "../components/InputPasswordField";
 import useUserAuthentication from "../viewmodels/useUserAuthentication";
@@ -33,11 +38,13 @@ export default function SignUp() {
       <Grid
         size={{ sm: 6, xs: 12 }}
         sx={{
-          ...commonStyles,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: { xs: "space-between", md: "center", sm: "center" },
           alignItems: "center",
           minHeight: "100vh",
           padding: 2,
-          gap: 6,
+          gap: { xs: 0, md: 6, sm: 6 },
         }}
       >
         {/* Content */}
@@ -45,66 +52,72 @@ export default function SignUp() {
           sx={{
             ...commonStyles,
             ...gridElements,
+            height: { xs: "80vh", md: "auto", sm: "auto" },
           }}
         >
-          <Typography variant="h4" sx={{ fontWeight: 700 }}>
-            Create new Account
-          </Typography>
-          <Typography variant="body1">
-            Create a new account by filling in all the fields or log in to an
-            existing account
-          </Typography>
+          <Box
+            sx={{
+              ...commonStyles,
+              ...gridElements,
+            }}
+          >
+            <Typography variant="h4" sx={{ fontWeight: 700 }}>
+              Create new Account
+            </Typography>
+            <Typography variant="body1">
+              Create a new account by filling in all the fields or log in to an
+              existing account
+            </Typography>
+          </Box>
+
+          <FormControl
+            sx={{
+              ...commonStyles,
+              ...gridElements,
+            }}
+          >
+            <TextField
+              label="Name"
+              value={user.signUp_name}
+              onChange={methods.updateField("signUp_name")}
+              sx={formField}
+            />
+
+            <TextField
+              label="Email"
+              value={user.signUp_email}
+              onChange={methods.updateField("signUp_email")}
+              sx={formField}
+            />
+
+            <TextField
+              label="Phone"
+              value={user.signUp_phone}
+              onChange={methods.updateField("signUp_phone")}
+              sx={formField}
+            />
+
+            <InputPasswordField
+              label="Password"
+              value={user.signUp_password}
+              onChange={methods.updateField("signUp_password")}
+              sx={formField}
+            />
+          </FormControl>
         </Box>
-
-        <FormControl
-          sx={{
-            ...commonStyles,
-            ...gridElements,
-          }}
-        >
-          <TextField
-            label="Name"
-            value={user.signUp_name}
-            onChange={methods.updateField("signUp_name")}
-            sx={formField}
-          />
-
-          <TextField
-            label="Email"
-            value={user.signUp_email}
-            onChange={methods.updateField("signUp_email")}
-            sx={formField}
-          />
-
-          <TextField
-            label="Phone"
-            value={user.signUp_phone}
-            onChange={methods.updateField("signUp_phone")}
-            sx={formField}
-          />
-
-          <InputPasswordField
-            label="Password"
-            value={user.signUp_password}
-            onChange={methods.updateField("signUp_password")}
-            sx={formField}
-          />
-        </FormControl>
 
         <Box
           sx={{
-            ...commonStyles,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: { xs: "flex-end", md: "center", sm: "center" },
+            height: { xs: "auto", md: "auto", sm: "auto" },
             ...gridElements,
-            padding: `0 16px 16px 16px`, 
-            bottom: { xs: 0, md: "auto", sm: "auto" },
-            position: { xs: "fixed", md: "static", sm: "static" },
           }}
         >
           <Button
             size="large"
-            sx={{ ...btnSubmit,
-              width: "100%"
-            }}
+            sx={{ ...btnSubmit, width: "100%" }}
             variant="contained"
             onClick={methods.handleSignUpForm}
           >

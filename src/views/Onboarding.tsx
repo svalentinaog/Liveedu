@@ -12,12 +12,25 @@ export default function Onboarding() {
 
   return (
     <Grid container spacing={2} sx={{ height: "100vh", boxSizing: "border-box" }}>
-      <Grid sx={{ ...commonStyles, height: "100%", width: "100%", gap: 4 }}>
+      <Grid sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: { xs: "space-between", md: "center", sm: "center" },
+        alignItems: "center",
+        width: "100%",
+        minHeight: "100vh",
+        gap: { xs: 0, md: 6, sm: 6 },
+        }}>
+
         {/* Screens */}
         <Grid
           size={{ sm: 12, xs: 12 }}
           sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: { xs: "flex-end", md: "center", sm: "center" },
             alignItems: "center",
+            height: { xs: "80vh", md: "100%", sm: "100%" },
           }}
         >
           <OnboardingCard key={currentScreen} screen={screenContent} />
@@ -28,12 +41,11 @@ export default function Onboarding() {
           size={{ sm: 12, xs: 12 }}
           sx={{
             ...commonStyles,
-            alignItems: { xs: "start", sm: "center" },
-            gap: 4,
             width: "100%",
-            bottom: 0,
-            position: "fixed",
-            padding: 2,
+            height: { xs: "auto", md: "auto", sm: "auto" },
+            gap: 4,
+            padding: `0 16px 16px 16px`,
+            alignItems: { xs: "start", sm: "center" },
           }}
         >
           {/* Points */}

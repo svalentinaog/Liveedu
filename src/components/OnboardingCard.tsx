@@ -42,7 +42,7 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
           ...commonStyles,
           alignItems: "center",
           gap: 6,
-          padding: 2,
+          padding: `0 16px 0 16px`,
         }}
       >
         {/* Content */}

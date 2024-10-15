@@ -37,11 +37,13 @@ export default function SignIn() {
       <Grid
         size={{ sm: 6, xs: 12 }}
         sx={{
-          ...commonStyles,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: { xs: "space-between", md: "center", sm: "center" },
           alignItems: "center",
           minHeight: "100vh",
           padding: 2,
-          gap: 6,
+          gap: { xs: 0, md: 6, sm: 6 },
         }}
       >
         {/* Content */}
@@ -49,48 +51,58 @@ export default function SignIn() {
           sx={{
             ...commonStyles,
             ...gridElements,
+            height: { xs: "80vh", md: "auto", sm: "auto" },
           }}
         >
-          <Typography variant="h4" sx={{ fontWeight: 700 }}>
-            Welcome back
-          </Typography>
-          <Typography variant="body1">
-            Sign in to an existing account using your phone number
-          </Typography>
+          <Box
+            sx={{
+              ...commonStyles,
+              ...gridElements,
+            }}
+          >
+            <Typography variant="h4" sx={{ fontWeight: 700 }}>
+              Welcome back
+            </Typography>
+            <Typography variant="body1">
+              Sign in to an existing account using your phone number
+            </Typography>
+          </Box>
+
+          <FormControl
+            sx={{
+              ...commonStyles,
+              ...gridElements,
+            }}
+          >
+            <TextField
+              label="Email or Phone Number"
+              value={user.signUp_email || user.signUp_phone}
+              sx={formField}
+            />
+
+            <InputPasswordField
+              label="Password"
+              value={user.signIn_password}
+              onChange={methods.updateField("signIn_password")}
+              sx={formField}
+            />
+          </FormControl>
         </Box>
-
-        <FormControl
-          sx={{
-            ...commonStyles,
-            ...gridElements,
-          }}
-        >
-          <TextField
-            label="Email or Phone Number"
-            value={user.signUp_email || user.signUp_phone}
-            sx={formField}
-          />
-
-          <InputPasswordField
-            label="Password"
-            value={user.signIn_password}
-            onChange={methods.updateField("signIn_password")}
-            sx={formField}
-          />
-        </FormControl>
 
         <Box
           sx={{
-            ...commonStyles,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: { xs: "flex-end", md: "center", sm: "center" },
+            height: { xs: "auto", md: "auto", sm: "auto" },
             ...gridElements,
-            padding: `0 16px 16px 16px`, 
-            bottom: { xs: 0, md: "auto", sm: "auto" },
-            position: { xs: "fixed", md: "static", sm: "static" },
           }}
         >
-          <Button size="large" sx={{ ...btnSubmit,
-              width: "100%"
-            }} variant="contained">
+          <Button
+            size="large"
+            sx={{ ...btnSubmit, width: "100%" }}
+            variant="contained"
+          >
             Login
           </Button>
 
