@@ -20,7 +20,7 @@ export default function SignIn() {
         size={{ sm: 6 }}
         sx={{
           ...commonStyles,
-          height: {xs: "90vh", md: "100vh", sm: "100vh"},
+          height: {xs: "95vh", md: "100vh", sm: "100vh"},
           display: { sm: "block", xs: "none" },
         }}
       >
@@ -41,7 +41,7 @@ export default function SignIn() {
           flexDirection: "column",
           justifyContent: { xs: "space-between", md: "center", sm: "center" },
           alignItems: "center",
-          minHeight: {xs: "90vh", md: "100vh", sm: "100vh"},
+          minHeight: {xs: "95vh", md: "100vh", sm: "100vh"},
           padding: 2,
           gap: { xs: 0, md: 6, sm: 6 },
         }}
