@@ -1,6 +1,8 @@
 import { Box } from "@mui/system";
-import Layout from "../components/Layout";
 import { Typography } from "@mui/material";
+import Layout from "../components/Layout";
+import Courses from "./Courses";
+import TopicsToStudy from "./TopicsToStudy";
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Box>
         <Typography variant="h1">Home</Typography>
       </Box>
+      <Courses />
+      <TopicsToStudy />
     </Layout>
   );
 }

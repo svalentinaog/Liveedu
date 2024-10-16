@@ -2,15 +2,17 @@ import { Typography } from "@mui/material";
 import { Box, Grid } from "@mui/system";
 import { commonStyles } from "../styles/mui";
 
-interface IOnboardingCardProps {
-  screen: {
+interface ICourseCardProps {
+  course: {
+    starPoints: number;
+    image: string;
     title: string;
     description: string;
-    image: string;
+    price: number;
   };
 }
 
-export default function OnboardingCard({ screen }: IOnboardingCardProps) {
+export default function CourseCard({ course }: ICourseCardProps) {
   return (
     <Grid container spacing={2}>
       {/* Section 1 */}
@@ -30,8 +32,8 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
             height: { xs: "100%", sm: "100%" },
             objectFit: { xs: "scale-down", sm: "contain" },
           }}
-          src={screen.image}
-          alt={screen.title}
+          src={course.image}
+          alt={course.title}
         />
       </Grid>
 
@@ -61,12 +63,12 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
               fontWeight: 700,
             }}
           >
-            {screen.title}
+            {course.title}
           </Typography>
           <Typography
             sx={{ width: "70%", fontSize: { xs: "0.95em", sm: "1.5em" } }}
           >
-            {screen.description}
+            {course.description}
           </Typography>
         </Box>
       </Grid>
