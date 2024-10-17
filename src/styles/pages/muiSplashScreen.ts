@@ -12,7 +12,7 @@ export const FullScreenBox = styled(Box)({
   position: "relative",
 });
 
-// Animación flotante
+// Animación flotante para el logo
 export const floatAnimation = keyframes`
     0% {
       transform: translateY(0);

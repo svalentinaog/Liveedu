@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Box, Grid } from "@mui/system";
-import { Button, FormControl, TextField, Typography } from "@mui/material";
+import { FormControl, TextField, Typography } from "@mui/material";
 import {
   commonStyles,
   gridElements,
   formField,
-  btnSubmit,
+  MainButton,
 } from "../styles/mui";
 import InputPasswordField from "../components/InputPasswordField";
 import useUserAuthentication from "../viewmodels/useUserAuthentication";
@@ -98,13 +98,7 @@ export default function SignIn() {
             ...gridElements,
           }}
         >
-          <Button
-            size="large"
-            sx={{ ...btnSubmit, width: "100%" }}
-            variant="contained"
-          >
-            Login
-          </Button>
+          <MainButton>Login</MainButton>
 
           <Typography variant="subtitle1">
             Don't have an account? <Link to="/sign-up">Sign Up</Link>

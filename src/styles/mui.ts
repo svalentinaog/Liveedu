@@ -33,13 +33,6 @@ export const gridElements = {
   gap: 2,
 };
 
-export const btnSubmit = {
-  background: "linear-gradient(var(--lilac), var(--blue))",
-  textTransform: "capitalize",
-  borderRadius: "16px",
-  boxShadow: "none",
-  padding: 1.75,
-};
-
-export * from "./pages/splashScreen";
-export * from "./pages/verificationCode";
+export * from "./pages/muiSplashScreen";
+export * from "./pages/muiVerificationCode";
+export * from "./components/muiMainButton";

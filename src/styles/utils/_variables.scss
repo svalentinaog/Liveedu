@@ -6,6 +6,9 @@ $light-gray: #C8C8C8;
 $success: #A0FB8A;
 $danger: #FB8A8A;
 
+$lilac-shadow: rgba(121, 128, 234, 0.5);
+$blue-shadow: rgba(162, 195, 252, 0.5);
+
 :root {
   --white-app: #{$white-app};
   --lilac: #{$lilac};
@@ -14,4 +17,6 @@ $danger: #FB8A8A;
   --light-gray: #{$light-gray};
   --success: #{$success};
   --danger: #{$danger};
+  --lilac-shadow: #{$lilac-shadow};
+  --blue-shadow: #{$blue-shadow};
 }

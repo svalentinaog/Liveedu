@@ -4,7 +4,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import OnboardingCard from "../components/OnboardingCard";
 import PaginationPoints from "../components/PaginationPoints";
 import useOnboardingViewModel from "../viewmodels/useOnboarding";
-import { commonStyles, btnSubmit } from "../styles/mui";
+import { commonStyles, MainButton, btnNextMobileNone } from "../styles/mui";
 
 export default function Onboarding() {
   const { currentScreen, screenContent, nextScreen, goToScreen, totalScreens } =
@@ -64,18 +64,13 @@ export default function Onboarding() {
           />
 
           {/* Next mobile */}
-          <Button
+          <MainButton
             onClick={nextScreen}
-            size="large"
-            sx={{
-              ...btnSubmit,
-              width: "100%",
-              display: { sm: "none", xs: "block" },
-            }}
+            sx={btnNextMobileNone}
             variant="contained"
           >
             Next
-          </Button>
+          </MainButton>
 
           {/* Next Desktop */}
           <Button
