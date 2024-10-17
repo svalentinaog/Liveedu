@@ -1,8 +1,8 @@
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     color-scheme: dark light;
-    background-color: #FCFDFF;
-    color: #4B4B4B;
+    background-color: var(--white-app);
+    color: var(--dark-gray);
 }
 
 * {
@@ -23,11 +23,13 @@ h4,
 h5,
 h6,
 p,
-span {
+span,
+small,
+a {
     margin: 0;
     padding: 0;
 }
 
 a {
-    color: #bfc3fc;
+    color: var(--blue);
 }

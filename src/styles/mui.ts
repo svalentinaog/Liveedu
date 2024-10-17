@@ -1,27 +1,25 @@
-import styled from "@emotion/styled";
-import { Box, Button, FormControl, keyframes } from "@mui/material";
-import { Grid } from "@mui/system";
-import { Theme } from "@mui/material/styles";
-
 // * SIGN IN, SIGN UP, ONBOARDING
+
+// Crear custom component (styled) tipo TextField para SignIn y SignUp:
 export const formField = {
   borderRadius: "16px",
   "& .MuiOutlinedInput-root": {
     borderRadius: "16px",
   },
   "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-    borderColor: "#bfc3fc",
+    borderColor: "var(--lilac)",
   },
   "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-    borderColor: "#a2c3fc",
+    borderColor: "var(--blue)",
   },
   "&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-    borderColor: "#a2c3fc",
+    borderColor: "var(--blue)",
   },
   "& .MuiInputBase-input": {
-    backgroundColor: "white",
+    backgroundColor: "var(--white-app)",
   },
 };
+// end component
 
 export const commonStyles = {
   display: "flex",
@@ -36,93 +34,12 @@ export const gridElements = {
 };
 
 export const btnSubmit = {
-  background: "linear-gradient(#bfc3fc, #a2c3fc)",
+  background: "linear-gradient(var(--lilac), var(--blue))",
   textTransform: "capitalize",
   borderRadius: "16px",
   boxShadow: "none",
   padding: 1.75,
 };
 
-// * SPLASH SCREEN
-export const FullScreenBox = styled(Box)({
-  height: "100vh",
-  width: "100vw",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundColor: "#ffffff",
-  position: "relative",
-});
-
-// Animación flotante
-export const floatAnimation = keyframes`
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  `;
-
-export const LogoContainer = styled(Box)({
-  width: "150px",
-  height: "150px",
-  animation: `${floatAnimation} 3s ease-in-out infinite`,
-});
-
-export const LogoImage = styled("img")({
-  width: "100%",
-  height: "auto",
-});
-
-// * SignUp/SignIn pages STYLED
-export const SignUpContainer = styled(Grid)({
-  display: "flex",
-  minHeight: "100vh",
-});
-
-export const Section1 = styled(Grid)(({ theme }: { theme: Theme }) => ({
-  height: "100vh",
-  display: "block",
-  [theme.breakpoints.down("sm")]: {
-    display: "none",
-  },
-}));
-
-export const Section2 = styled(Grid)(({ theme }: { theme: Theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: theme.spacing(2),
-  gap: theme.spacing(6),
-}));
-
-export const ContentBox = styled(Box)({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  gap: "1.5rem",
-  width: "100%",
-  maxWidth: "400px",
-});
-
-export const StyledFormControl = styled(FormControl)({
-  display: "flex",
-  flexDirection: "column",
-  gap: "1.5rem",
-  width: "100%",
-});
-
-export const StyledButton = styled(Button)({
-  background: "linear-gradient(#bfc3fc, #a2c3fc)",
-  textTransform: "capitalize",
-  borderRadius: "16px",
-  boxShadow: "none",
-  padding: "1.75rem",
-});
-
-// * LAYOUT
+export * from "./pages/splashScreen";
+export * from "./pages/verificationCode";

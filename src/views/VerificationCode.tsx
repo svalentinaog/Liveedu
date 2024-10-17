@@ -1,9 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { commonStyles, gridElements, formField } from "../styles/mui";
-import {
-  CodeInputContainer,
-  CodeInput,
-} from "../styles/pages/verificationCode";
+import { CodeInputContainer, CodeInput } from "../styles/mui";
 import { Grid } from "@mui/system";
 import { Link } from "react-router-dom";
 import { useVerificationCode } from "../viewmodels/useVerification";
@@ -26,7 +23,7 @@ export default function VerificationCode() {
         <Box
           sx={{
             height: "100%",
-            background: "linear-gradient(#bfc3fc, #a2c3fc)",
+            background: "linear-gradient(var(--lilac), var(--blue))",
             borderRadius: "0 150px 150px 0",
           }}
         ></Box>
@@ -49,7 +46,11 @@ export default function VerificationCode() {
             ...gridElements,
           }}
         >
-          <Typography variant="h4" sx={{ fontWeight: 700 }} gutterBottom>
+          <Typography
+            variant="h4"
+            sx={{ fontWeight: 700, margin: 0 }}
+            gutterBottom
+          >
             Phone verification
           </Typography>
           <Typography variant="body1">

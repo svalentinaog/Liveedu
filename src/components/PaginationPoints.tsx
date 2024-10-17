@@ -15,7 +15,7 @@ const stylesPagination = {
   paginationPoint: (isActive: boolean) => ({
     width: isActive ? { xs: "30px", sm: "50px" } : { xs: "10px", sm: "15px" },
     height: { xs: "10px", sm: "15px" },
-    background: "linear-gradient(#bfc3fc, #a2c3fc)",
+    background: "linear-gradient(var(--lilac), var(--blue))",
     borderRadius: isActive
       ? { xs: "50px", sm: "50px" }
       : { xs: "50%", sm: "50%" },

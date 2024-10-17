@@ -1,0 +1,17 @@
+$white-app: #FCFDFF;
+$lilac: #BFC3FC;
+$blue: #A2C3FC;
+$dark-gray: #4B4B4B;
+$light-gray: #C8C8C8;
+$success: #A0FB8A;
+$danger: #FB8A8A;
+
+:root {
+  --white-app: #{$white-app};
+  --lilac: #{$lilac};
+  --blue: #{$blue};
+  --dark-gray: #{$dark-gray};
+  --light-gray: #{$light-gray};
+  --success: #{$success};
+  --danger: #{$danger};
+}
