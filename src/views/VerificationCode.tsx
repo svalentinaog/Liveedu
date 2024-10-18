@@ -1,6 +1,11 @@
-import { Box, Typography } from "@mui/material";
-import { commonStyles, gridElements, formField } from "../styles/mui";
-import { CodeInputContainer, CodeInput } from "../styles/mui";
+import { Typography } from "@mui/material";
+import {
+  FormContent,
+  GradientBlock,
+  FormContainer,
+  InputCodeField,
+  CustomFormCode,
+} from "../styles/mui";
 import { Grid } from "@mui/system";
 import { Link } from "react-router-dom";
 import { useVerificationCode } from "../viewmodels/useVerification";
@@ -12,40 +17,11 @@ export default function VerificationCode() {
   return (
     <Grid container spacing={2}>
       {/* Section 1 */}
-      <Grid
-        size={{ sm: 6 }}
-        sx={{
-          ...commonStyles,
-          height: "100vh",
-          display: { sm: "block", xs: "none" },
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            background: "linear-gradient(var(--lilac), var(--blue))",
-            borderRadius: "0 150px 150px 0",
-          }}
-        ></Box>
-      </Grid>
+      <GradientBlock size={{ sm: 6 }} />
 
       {/* section 2 */}
-      <Grid
-        size={{ sm: 6, xs: 12 }}
-        sx={{
-          ...commonStyles,
-          alignItems: "center",
-          minHeight: "100vh",
-          padding: 2,
-          gap: 6,
-        }}
-      >
-        <Box
-          sx={{
-            ...commonStyles,
-            ...gridElements,
-          }}
-        >
+      <FormContainer size={{ sm: 6, xs: 12 }}>
+        <FormContent>
           <Typography
             variant="h4"
             sx={{ fontWeight: 700, margin: 0 }}
@@ -57,10 +33,9 @@ export default function VerificationCode() {
             Enter the four-digit code from SMS.
           </Typography>
 
-          <CodeInputContainer>
+          <CustomFormCode>
             {code.map((digit, index) => (
-              <CodeInput
-                sx={formField}
+              <InputCodeField
                 key={index}
                 inputRef={inputRefs[index]}
                 value={digit}
@@ -69,13 +44,13 @@ export default function VerificationCode() {
                 variant="outlined"
               />
             ))}
-          </CodeInputContainer>
+          </CustomFormCode>
 
           <Typography variant="subtitle1">
             SMS not received <Link to="#">Send again?</Link>
           </Typography>
-        </Box>
-      </Grid>
+        </FormContent>
+      </FormContainer>
     </Grid>
   );
 }

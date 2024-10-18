@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import { Box, Grid } from "@mui/system";
-import { commonStyles } from "../styles/mui";
 
 interface ITopicToStudyCardProps {
   topic: {
@@ -17,7 +16,7 @@ export default function TopicToStudyCard({ topic }: ITopicToStudyCardProps) {
       <Grid
         size={{ sm: 6, xs: 12 }}
         sx={{
-          ...commonStyles,
+          display: "flex",
           alignItems: "center",
           padding: { xs: 0, md: 0, sm: 4 },
           height: { xs: "300px", md: "500px", sm: "800px" },
@@ -39,7 +38,7 @@ export default function TopicToStudyCard({ topic }: ITopicToStudyCardProps) {
       <Grid
         size={{ sm: 6, xs: 12 }}
         sx={{
-          ...commonStyles,
+          flexDirection: "column",
           alignItems: "center",
           gap: 6,
           padding: `0 16px 0 16px`,
@@ -48,7 +47,7 @@ export default function TopicToStudyCard({ topic }: ITopicToStudyCardProps) {
         {/* Content */}
         <Box
           sx={{
-            ...commonStyles,
+            justifyContent: "center",
             gap: 2,
           }}
         >

@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
 import { Box, Grid } from "@mui/system";
-import { commonStyles } from "../styles/mui";
 
 interface IOnboardingCardProps {
   screen: {
@@ -17,7 +16,9 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
       <Grid
         size={{ sm: 6, xs: 12 }}
         sx={{
-          ...commonStyles,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
           alignItems: "center",
           padding: { xs: 0, md: 0, sm: 4 },
           height: { xs: "300px", md: "500px", sm: "800px" },
@@ -39,7 +40,9 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
       <Grid
         size={{ sm: 6, xs: 12 }}
         sx={{
-          ...commonStyles,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
           alignItems: "center",
           gap: 6,
           padding: `0 16px 0 16px`,
@@ -48,7 +51,9 @@ export default function OnboardingCard({ screen }: IOnboardingCardProps) {
         {/* Content */}
         <Box
           sx={{
-            ...commonStyles,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
             gap: 2,
           }}
         >

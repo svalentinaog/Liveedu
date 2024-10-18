@@ -1,26 +1,23 @@
 import { useState } from "react";
 import {
-  FormControl,
   InputLabel,
   OutlinedInput,
   InputAdornment,
   IconButton,
-  SxProps,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { InputPassField } from "../styles/mui";
 
 interface IPasswordFieldProps {
   label: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  sx?: SxProps;
 }
 
-export default function InputPasswordField({
+export default function CustomPassField({
   label,
   value,
   onChange,
-  sx,
 }: IPasswordFieldProps) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -29,7 +26,7 @@ export default function InputPasswordField({
     event.preventDefault();
 
   return (
-    <FormControl sx={sx}>
+    <InputPassField>
       <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
       <OutlinedInput
         id="outlined-adornment-password"
@@ -53,6 +50,6 @@ export default function InputPasswordField({
         }
         label={label}
       />
-    </FormControl>
+    </InputPassField>
   );
 }

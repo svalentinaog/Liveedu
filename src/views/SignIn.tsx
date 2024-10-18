@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
-import { Box, Grid } from "@mui/system";
-import { FormControl, TextField, Typography } from "@mui/material";
+import { Grid } from "@mui/system";
+import { Typography } from "@mui/material";
 import {
-  commonStyles,
-  gridElements,
-  formField,
+  GradientBlock,
+  FormContainer,
+  CustomForm,
+  FormContent,
+  FormActions,
   MainButton,
 } from "../styles/mui";
-import InputPasswordField from "../components/InputPasswordField";
-import useUserAuthentication from "../viewmodels/useUserAuthentication";
+
+import useUserAuthentication from "../viewmodels/useUserAuthentication"; // custom hook
+import CustomPassField from "../components/CustomPassField";
+import CustomTextField from "../components/CustomTextField";
 
 export default function SignIn() {
   const { user, methods } = useUserAuthentication();
@@ -16,95 +20,42 @@ export default function SignIn() {
   return (
     <Grid container spacing={2}>
       {/* Section 1 */}
-      <Grid
-        size={{ sm: 6 }}
-        sx={{
-          ...commonStyles,
-          height: { xs: "90vh", md: "100vh", sm: "100vh" },
-          display: { sm: "block", xs: "none" },
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            background: "linear-gradient(var(--lilac), var(--blue))",
-            borderRadius: "0 150px 150px 0",
-          }}
-        ></Box>
-      </Grid>
+      <GradientBlock size={{ sm: 6 }} />
 
       {/* Section 2 */}
-      <Grid
-        size={{ sm: 6, xs: 12 }}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: { xs: "space-between", md: "center", sm: "center" },
-          alignItems: "center",
-          minHeight: { xs: "90vh", md: "100vh", sm: "100vh" },
-          padding: 2,
-          gap: { xs: 0, md: 6, sm: 6 },
-        }}
-      >
+      <FormContainer size={{ sm: 6, xs: 12 }}>
         {/* Content */}
-        <Box
-          sx={{
-            ...commonStyles,
-            ...gridElements,
-            height: { xs: "100%", md: "auto", sm: "auto" },
-          }}
-        >
-          <Box
-            sx={{
-              ...commonStyles,
-              ...gridElements,
-            }}
-          >
-            <Typography variant="h4" sx={{ fontWeight: 700 }}>
-              Welcome back
-            </Typography>
-            <Typography variant="body1">
-              Sign in to an existing account using your phone number
-            </Typography>
-          </Box>
+        <FormContent>
+          {/* Text Content */}
+          <Typography variant="h4" sx={{ fontWeight: 700 }}>
+            Welcome back
+          </Typography>
+          <Typography variant="body1">
+            Sign in to an existing account using your phone number
+          </Typography>
 
-          <FormControl
-            sx={{
-              ...commonStyles,
-              ...gridElements,
-            }}
-          >
-            <TextField
+          {/* Form Content */}
+          <CustomForm>
+            <CustomTextField
               label="Email or Phone Number"
               value={user.signUp_email || user.signUp_phone}
-              sx={formField}
+              onChange={methods.updateField("signIn_password")}
             />
-
-            <InputPasswordField
+            <CustomPassField
               label="Password"
               value={user.signIn_password}
               onChange={methods.updateField("signIn_password")}
-              sx={formField}
             />
-          </FormControl>
-        </Box>
+          </CustomForm>
+        </FormContent>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: { xs: "flex-end", md: "center", sm: "center" },
-            height: { xs: "auto", md: "auto", sm: "auto" },
-            ...gridElements,
-          }}
-        >
+        <FormActions>
           <MainButton>Login</MainButton>
-
           <Typography variant="subtitle1">
             Don't have an account? <Link to="/sign-up">Sign Up</Link>
           </Typography>
-        </Box>
-      </Grid>
+        </FormActions>
+      </FormContainer>
     </Grid>
   );
 }

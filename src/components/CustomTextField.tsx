@@ -1,4 +1,5 @@
-import { TextField, SxProps } from "@mui/material";
+import { SxProps } from "@mui/material";
+import { InputTextField } from "../styles/mui";
 
 interface ITextFieldProps {
   label: string;
@@ -8,22 +9,20 @@ interface ITextFieldProps {
   sx?: SxProps;
 }
 
-export default function InputTextField({
+export default function CustomTextField({
   label,
   value,
   onChange,
   type = "text",
-  sx,
 }: ITextFieldProps) {
   return (
-    <TextField
+    <InputTextField
       id="outlined-basic"
       label={label}
       variant="outlined"
       type={type}
       value={value}
       onChange={onChange}
-      sx={sx}
     />
   );
 }

@@ -4,7 +4,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import OnboardingCard from "../components/OnboardingCard";
 import PaginationPoints from "../components/PaginationPoints";
 import useOnboardingViewModel from "../viewmodels/useOnboarding";
-import { commonStyles, MainButton, btnNextMobileNone } from "../styles/mui";
+import { MainButton, btnNextMobileNone } from "../styles/mui";
 
 export default function Onboarding() {
   const { currentScreen, screenContent, nextScreen, goToScreen, totalScreens } =
@@ -48,7 +48,9 @@ export default function Onboarding() {
         <Grid
           size={{ sm: 12, xs: 12 }}
           sx={{
-            ...commonStyles,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
             width: "100%",
             height: { xs: "auto", md: "auto", sm: "auto" },
             gap: 4,
