@@ -1,5 +1,5 @@
+export * from "./pages/muiPaginationPoints";
 export * from "./pages/muiSplashScreen";
-
 export * from "./components/muiGradientBlock";
 export * from "./components/muiFormContainer";
 export * from "./components/muiForm";
@@ -9,3 +9,8 @@ export * from "./components/muiMainButton";
 export * from "./components/muiInputTextField";
 export * from "./components/muiInputPassField";
 export * from "./components/muiInputCodeField";
+export * from "./components/muiOnboardingScreen";
+export * from "./components/muiPaginationContainer";
+export * from "./components/muiNextButton";
+export * from "./components/muiOnboardingContent";
+export * from "./components/muiOnboardingContainer";

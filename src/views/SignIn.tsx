@@ -21,7 +21,6 @@ export default function SignIn() {
     <Grid container spacing={2}>
       {/* Section 1 */}
       <GradientBlock size={{ sm: 6 }} />
-
       {/* Section 2 */}
       <FormContainer size={{ sm: 6, xs: 12 }}>
         {/* Content */}
@@ -33,7 +32,6 @@ export default function SignIn() {
           <Typography variant="body1">
             Sign in to an existing account using your phone number
           </Typography>
-
           {/* Form Content */}
           <CustomForm>
             <CustomTextField
@@ -48,7 +46,6 @@ export default function SignIn() {
             />
           </CustomForm>
         </FormContent>
-
         <FormActions>
           <MainButton>Login</MainButton>
           <Typography variant="subtitle1">
