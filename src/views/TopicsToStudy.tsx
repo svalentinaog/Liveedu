@@ -1,3 +1,3 @@
 export default function TopicsToStudy() {
-  return <div>TopicsToStudy</div>;
+  return <div>Topics To Study</div>;
 }
