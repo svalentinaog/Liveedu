@@ -1,16 +1,30 @@
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
 import Courses from "./Courses";
 import TopicsToStudy from "./TopicsToStudy";
+import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div>
-      <Box>
-        <Typography variant="h1">Home</Typography>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        padding: { xs: "0", md: "0 20px 0 20px", sm: "0 20px 0 20px" },
+      }}
+    >
+      <Header />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          padding: { xs: "20px" },
+        }}
+      >
+        <Courses />
+        <TopicsToStudy />
       </Box>
-      <Courses />
-      <TopicsToStudy />
-    </div>
+    </Box>
   );
 }

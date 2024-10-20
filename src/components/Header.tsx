@@ -1,9 +1,45 @@
-// import React from 'react'
+import { Typography } from "@mui/material";
+import { Box, Grid } from "@mui/system";
 
-// function Header() {
-//   return (
-//     <div>Header</div>
-//   )
-// }
+function Header() {
+  return (
+    <Grid
+      sx={{
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: {
+          xs: "50px 30px 35px 30px",
+          md: "50px 50px 35px 50px",
+          sm: "50px 50px 35px 50px",
+        },
+        borderRadius: "0px 0px 50px 50px",
+        background: "var(--gradient)",
+      }}
+    >
+      <Box>
+        <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+          Hi, Robert
+        </Typography>
+        <Typography>Let's start learning</Typography>
+      </Box>
+      <Box>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 0.5,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img src="svg/coins.svg" alt="" />
+          <Typography>400</Typography>
+        </Box>
+        <img src="" alt="" />
+      </Box>
+    </Grid>
+  );
+}
 
-// export default Header
+export default Header;

@@ -6,10 +6,10 @@ $light-gray: #C8C8C8;
 $success: #A0FB8A;
 $danger: #FB8A8A;
 
-$gradient: linear-gradient($lilac, $blue);
+$gradient: linear-gradient(to right, $lilac, $blue);
 
-$translucent-gradient: linear-gradient(to right, rgba(191, 195, 252, 0.1), rgba(100, 150, 255, 0.1));
-$translucent-nav: linear-gradient(to right, rgba(191, 195, 252, 0.2), rgba(100, 150, 255, 0.1));
+$translucent-gradient: linear-gradient(to right, rgba(191, 195, 252, 0.2), rgba(100, 150, 255, 0.2));
+$translucent-nav: linear-gradient(to right, rgba(191, 195, 252, 0.4), rgba(100, 150, 255, 0.2));
 
 $lilac-shadow: rgba(121, 128, 234, 0.5);
 $blue-shadow: rgba(162, 195, 252, 0.5);

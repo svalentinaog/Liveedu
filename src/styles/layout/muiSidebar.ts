@@ -68,7 +68,7 @@ export const NavElement = styled(Link)<NavElementProps>`
     `
     background: var(--translucent-nav);
      svg {
-      fill: var(--lilac);
+      fill: var(--blue);
     }
   `} {
     background: transparent;

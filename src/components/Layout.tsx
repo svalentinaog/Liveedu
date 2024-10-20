@@ -1,17 +1,22 @@
-import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import { Outlet } from "react-router-dom";
+import { Box } from "@mui/system";
 
 export default function Layout() {
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <Box sx={{ display: "flex", minHeight: "100vh" }}>
       {/* Sidebar */}
       <Sidebar />
 
       {/* Contenido principal */}
-      <div style={{ flex: 1, padding: "20px" }}>
+      <Box
+        sx={{
+          flex: 1,
+        }}
+      >
         {/* Aquí es donde se renderizarán las rutas hijas */}
         <Outlet />
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
