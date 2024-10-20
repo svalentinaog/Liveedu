@@ -1,3 +1,10 @@
+import { Box } from "@mui/system";
+import { Typography } from "@mui/material";
+
 export default function Courses() {
-  return <div>Courses</div>;
+  return (
+    <Box>
+      <Typography>Courses</Typography>
+    </Box>
+  );
 }

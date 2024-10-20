@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import { Box, Grid } from "@mui/system";
 
 function Header() {
@@ -24,7 +24,7 @@ function Header() {
         </Typography>
         <Typography>Let's start learning</Typography>
       </Box>
-      <Box>
+      <Link href={"/coins"}>
         <Box
           sx={{
             display: "flex",
@@ -37,7 +37,7 @@ function Header() {
           <Typography>400</Typography>
         </Box>
         <img src="" alt="" />
-      </Box>
+      </Link>
     </Grid>
   );
 }

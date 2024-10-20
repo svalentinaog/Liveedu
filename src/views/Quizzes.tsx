@@ -1,9 +1,8 @@
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import TopicsToStudy from "./TopicsToStudy";
 import Header from "../components/Header";
-import Courses from "./Courses";
 
-export default function Home() {
+export default function Quizzes() {
   return (
     <Box
       sx={{
@@ -22,8 +21,7 @@ export default function Home() {
           padding: { xs: "20px" },
         }}
       >
-        <Courses />
-        <TopicsToStudy />
+        <Typography>Topic quizzes</Typography>
       </Box>
     </Box>
   );

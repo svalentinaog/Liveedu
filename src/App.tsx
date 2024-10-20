@@ -5,10 +5,11 @@ import SignIn from "./views/SignIn";
 import SignUp from "./views/SignUp";
 import VerificationCode from "./views/VerificationCode";
 import Home from "./views/Home";
-import Courses from "./views/Courses";
+import Quizzes from "./views/Quizzes";
 import Layout from "./components/Layout";
-import Progress from "./views/Progress";
+import Statistics from "./views/Statistics";
 import Profile from "./views/Profile";
+import Coins from "./views/Coins";
 
 export default function App() {
   return (
@@ -21,9 +22,10 @@ export default function App() {
 
       <Route element={<Layout />}>
         <Route path="/home" element={<Home />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/progress" element={<Progress />} />
+        <Route path="/quizzes" element={<Quizzes />} />
+        <Route path="/statistics" element={<Statistics />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/coins" element={<Coins />} />
       </Route>
     </Routes>
   );

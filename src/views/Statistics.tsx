@@ -1,6 +1,7 @@
 import * as React from "react";
 import { BarChart } from "@mui/x-charts";
 import { Box, Typography } from "@mui/material";
+import Header from "../components/Header";
 
 interface ChartData {
   day: string;
@@ -66,11 +67,30 @@ const passedTestsData: ChartData[] = [
   { day: "16", value: 4 },
 ];
 
-export default function Progress() {
+export default function Statistics() {
   return (
-    <Box sx={{ p: 3, bgcolor: "background.paper" }}>
-      <Chart data={timeSpentData} title="Time spent in the app" />
-      <Chart data={passedTestsData} title="Passed tests" />
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        padding: { xs: "0", md: "0 20px 0 20px", sm: "0 20px 0 20px" },
+      }}
+    >
+      <Header />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          padding: { xs: "20px" },
+        }}
+      >
+        <Box sx={{ p: 3, bgcolor: "background.paper" }}>
+          <Chart data={timeSpentData} title="Time spent in the app" />
+          <Chart data={passedTestsData} title="Passed tests" />
+        </Box>
+      </Box>
     </Box>
   );
 }

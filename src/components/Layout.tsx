@@ -7,7 +7,6 @@ export default function Layout() {
     <Box sx={{ display: "flex", minHeight: "100vh" }}>
       {/* Sidebar */}
       <Sidebar />
-
       {/* Contenido principal */}
       <Box
         sx={{
