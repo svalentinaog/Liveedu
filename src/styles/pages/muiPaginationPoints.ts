@@ -17,7 +17,7 @@ interface PaginationPointProps {
 export const PaginationPoint = styled(Box)<PaginationPointProps>`
   width: ${({ isActive }) => (isActive ? "30px" : "10px")};
   height: 10px;
-  background: linear-gradient(var(--lilac), var(--blue));
+  background: var(--gradient);
   border-radius: ${({ isActive }) => (isActive ? "50px" : "50%")};
   transition: all 0.3s ease;
   cursor: pointer;

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "../store";
 import { updateSidebarStateByKey } from "../models/slices/SidebarSlice";
+import type { RootState } from "../store";
 
 export default function useSidebar() {
   const dispatch = useDispatch();

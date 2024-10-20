@@ -3,7 +3,7 @@ import { Grid } from "@mui/system";
 
 export const GradientBlock = styled(Grid)`
   height: 100vh;
-  background: linear-gradient(var(--lilac), var(--blue));
+  background: var(--gradient);
   border-radius: 0 150px 150px 0;
 
   @media (max-width: 600px) {

@@ -1,4 +1,4 @@
-export * from "./pages/muiSidebar";
+export * from "./layout/muiSidebar";
 export * from "./pages/muiPaginationPoints";
 export * from "./pages/muiSplashScreen";
 export * from "./components/muiGradientBlock";

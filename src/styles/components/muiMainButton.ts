@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 export const MainButton = styled(Button)({
   width: "100%",
   color: "var(--white-app)",
-  background: "linear-gradient(var(--lilac), var(--blue))",
+  background: "var(--gradient)",
   textTransform: "capitalize",
   borderRadius: "16px",
   padding: 16,

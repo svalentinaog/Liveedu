@@ -6,6 +6,11 @@ $light-gray: #C8C8C8;
 $success: #A0FB8A;
 $danger: #FB8A8A;
 
+$gradient: linear-gradient($lilac, $blue);
+
+$translucent-gradient: linear-gradient(to right, rgba(191, 195, 252, 0.1), rgba(100, 150, 255, 0.1));
+$translucent-nav: linear-gradient(to right, rgba(191, 195, 252, 0.2), rgba(100, 150, 255, 0.1));
+
 $lilac-shadow: rgba(121, 128, 234, 0.5);
 $blue-shadow: rgba(162, 195, 252, 0.5);
 
@@ -19,4 +24,7 @@ $blue-shadow: rgba(162, 195, 252, 0.5);
   --danger: #{$danger};
   --lilac-shadow: #{$lilac-shadow};
   --blue-shadow: #{$blue-shadow};
+  --gradient: #{$gradient};
+  --translucent-gradient: #{$translucent-gradient};
+  --translucent-nav: #{$translucent-nav};
 }
