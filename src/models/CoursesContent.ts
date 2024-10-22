@@ -9,14 +9,14 @@ interface ICoursesContent {
 export const CoursesContent: ICoursesContent[] = [
   {
     starPoints: 5.5,
-    image: "/svg/screen1.svg",
+    image: "/svg/course1.svg",
     title: "Elementary",
     description: "For beginners and intermediates",
     price: 520,
   },
   {
     starPoints: 4.9,
-    image: "/svg/screen2.svg",
+    image: "/svg/course2.svg",
     title: "Advanced",
     description: "For advanced",
     price: 1250,

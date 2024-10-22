@@ -7,9 +7,10 @@ export default function Home() {
   return (
     <Box
       sx={{
+        width: "100%",
         display: "flex",
         flexDirection: "column",
-        gap: 2,
+        gap: 6,
         padding: { xs: "0", md: "0 20px 0 20px", sm: "0 20px 0 20px" },
       }}
     >
@@ -18,7 +19,7 @@ export default function Home() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: 2,
+          gap: 6,
           padding: { xs: "20px" },
         }}
       >
