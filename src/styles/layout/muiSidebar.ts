@@ -11,7 +11,8 @@ export const SidebarContainer = styled(Box)`
   gap: 32px;
 
   @media (max-width: 768px) {
-    width: 100%;
+    // width: 100%;
+    width: 100vw;
     position: fixed;
     bottom: 0;
     left: 0;

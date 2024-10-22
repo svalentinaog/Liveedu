@@ -8,6 +8,8 @@ $danger: #FB8A8A;
 
 $gradient: linear-gradient(to right, $lilac, $blue);
 
+$translucent-lilac: rgb(239, 241, 254);
+
 $translucent-gradient: linear-gradient(to right, rgb(239, 241, 254), rgb(222, 232, 255));
 $translucent-nav: linear-gradient(to right, rgba(191, 195, 252, 0.4), rgba(100, 150, 255, 0.2));
 
@@ -27,4 +29,5 @@ $blue-shadow: rgba(162, 195, 252, 0.5);
   --gradient: #{$gradient};
   --translucent-gradient: #{$translucent-gradient};
   --translucent-nav: #{$translucent-nav};
+  --translucent-lilac: #{$translucent-lilac};
 }

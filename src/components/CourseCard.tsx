@@ -1,5 +1,5 @@
-import { Typography } from "@mui/material";
-import { Box, Grid } from "@mui/system";
+import { Card, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 interface ICourseCardProps {
   course: {
@@ -13,7 +13,21 @@ interface ICourseCardProps {
 
 export default function CourseCard({ course }: ICourseCardProps) {
   return (
-    <Grid sx={{ width: { xs: "270px", md: "400px", sm: "300px" } }}>
+    <Card
+      sx={{
+        width: {
+          xs: "300px",
+          md: "400px",
+          sm: "300px",
+          boxShadow: "none",
+          background: "transparent",
+          border: "none",
+          display: "flex",
+          flexDirection: "column",
+          gap: 10,
+        },
+      }}
+    >
       <Box sx={{ width: "100%", borderRadius: 30 }}>
         <img
           src={course.image}
@@ -23,11 +37,11 @@ export default function CourseCard({ course }: ICourseCardProps) {
       </Box>
       <Box
         sx={{
+          width: "100%",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "start",
           gap: 2,
-          mt: 2,
         }}
       >
         <Box>
@@ -47,6 +61,6 @@ export default function CourseCard({ course }: ICourseCardProps) {
           <Typography>{course.price}</Typography>
         </Box>
       </Box>
-    </Grid>
+    </Card>
   );
 }

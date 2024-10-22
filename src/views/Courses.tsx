@@ -9,7 +9,7 @@ export default function Courses() {
   return (
     <Box
       sx={{
-        width: "100%",
+        width: "auto",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -23,7 +23,7 @@ export default function Courses() {
       <Box
         sx={{
           width: { xs: "100%", md: "100%", sm: "100%" },
-          display: { xs: "column", md: "column", sm: "flex" },
+          display: { xs: "flex", md: "column", sm: "flex" },
           gap: 4,
           overflowX: "scroll",
           whiteSpace: "nowrap",
