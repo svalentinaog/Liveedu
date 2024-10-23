@@ -5,7 +5,7 @@ function Header() {
   return (
     <Grid
       sx={{
-        width: { xs: "100vw", md: "100%", sm: "100%" },
+        width: { xs: "100vw", md: "100%" },
         display: "flex",
         flexDirection: "row",
         alignItems: "center",

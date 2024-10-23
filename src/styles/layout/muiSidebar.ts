@@ -3,7 +3,9 @@ import { Link, LinkProps } from "react-router-dom";
 import { Box } from "@mui/system";
 
 export const SidebarContainer = styled(Box)`
-  width: 300px;
+  width: 15%;
+  height: 100vh;
+  position: fixed;
   background: var(--translucent-gradient);
   padding: 20px;
   display: flex;
@@ -11,7 +13,6 @@ export const SidebarContainer = styled(Box)`
   gap: 32px;
 
   @media (max-width: 768px) {
-    // width: 100%;
     width: 100vw;
     position: fixed;
     bottom: 0;

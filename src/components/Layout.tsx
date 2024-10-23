@@ -10,6 +10,7 @@ export default function Layout() {
       {/* Contenido principal */}
       <Box
         sx={{
+          marginLeft: { xs: 0, md: "15%" },
           flex: 1,
         }}
       >

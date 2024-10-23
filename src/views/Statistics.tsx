@@ -2,6 +2,7 @@ import * as React from "react";
 import { BarChart } from "@mui/x-charts";
 import { Box, Typography } from "@mui/material";
 import Header from "../components/Header";
+import Courses from "./Courses";
 
 interface ChartData {
   day: string;
@@ -90,6 +91,25 @@ export default function Statistics() {
           <Chart data={timeSpentData} title="Time spent in the app" />
           <Chart data={passedTestsData} title="Passed tests" />
         </Box>
+      </Box>
+
+      <Box
+        sx={{
+          width: "auto",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "start",
+          gap: { xs: 1, md: 2 },
+        }}
+      >
+        <Typography
+          sx={{ fontWeight: "bold", fontSize: { xs: "16px", md: "24px" } }}
+        >
+          Latest courses
+        </Typography>
+
+        <Courses />
       </Box>
     </Box>
   );

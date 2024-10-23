@@ -16,7 +16,7 @@ export default function CourseCard({ course }: ICourseCardProps) {
     <Card
       sx={{
         width: {
-          xs: "300px",
+          xs: "250px",
           md: "400px",
           sm: "300px",
           boxShadow: "none",
@@ -45,20 +45,33 @@ export default function CourseCard({ course }: ICourseCardProps) {
         }}
       >
         <Box>
-          <Typography variant="h5" sx={{ fontWeight: "medium" }}>
+          <Typography
+            sx={{ fontWeight: "bold", fontSize: { xs: "16px", md: "24px" } }}
+          >
             {course.title}
           </Typography>
-          <Typography variant="body2">{course.description}</Typography>
+          <Typography
+            sx={{ fontWeight: "400px", fontSize: { xs: "12px", md: "16px" } }}
+          >
+            {course.description}
+          </Typography>
         </Box>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            gap: 1,
           }}
         >
-          <img src="svg/coins.svg" alt="coins" />
-          <Typography>{course.price}</Typography>
+          <Box sx={{ width: "100%" }}>
+            <img src="svg/coins.svg" alt="coins" />
+          </Box>
+          <Typography
+            sx={{ fontWeight: "400px", fontSize: { xs: "12px", md: "16px" } }}
+          >
+            {course.price}
+          </Typography>
         </Box>
       </Box>
     </Card>

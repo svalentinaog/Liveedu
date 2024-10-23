@@ -1,6 +1,6 @@
-import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Header from "../components/Header";
+import TopicQuizzes from "./TopicQuizzes";
 
 export default function Quizzes() {
   return (
@@ -8,7 +8,7 @@ export default function Quizzes() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: 2,
+        gap: 6,
         padding: { xs: "0", md: "0 20px 0 20px", sm: "0 20px 0 20px" },
       }}
     >
@@ -18,10 +18,10 @@ export default function Quizzes() {
           display: "flex",
           flexDirection: "column",
           gap: 2,
-          padding: { xs: "20px" },
+          padding: { xs: "20px", md: 0 },
         }}
       >
-        <Typography>Topic quizzes</Typography>
+        <TopicQuizzes />
       </Box>
     </Box>
   );
