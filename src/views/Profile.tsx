@@ -1,27 +1,31 @@
-import { Box } from "@mui/system";
+import { Box } from "@mui/material";
+import { useItemViewModel } from "../viewmodels/useItem";
+import ItemCard from "../components/ItemCard";
 import Header from "../components/Header";
-import { Typography } from "@mui/material";
 
 export default function Profile() {
+  const { profileItems } = useItemViewModel();
+
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: 2,
-        padding: { xs: "0", md: "0 20px 0 20px", sm: "0 20px 0 20px" },
+        gap: 6,
+        padding: { xs: "0", md: "0 20px", sm: "0 20px" },
       }}
     >
       <Header />
+
       <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 2,
-          padding: { xs: "20px" },
-        }}
+        display="flex"
+        flexDirection="column"
+        gap={4}
+        padding={{ xs: "20px", md: 0 }}
       >
-        <Typography>Profile</Typography>
+        {profileItems.map((item) => (
+          <ItemCard key={item.path} item={item} />
+        ))}
       </Box>
     </Box>
   );

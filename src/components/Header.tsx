@@ -6,14 +6,15 @@ function Header() {
     <Grid
       sx={{
         width: { xs: "100vw", md: "100%" },
+        height: "150px",
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
         padding: {
-          xs: "50px 30px 35px 30px",
-          md: "50px 50px 35px 50px",
-          sm: "50px 50px 35px 50px",
+          xs: "0px 50px",
+          md: "0px 50px",
+          sm: "0px 50px",
         },
         borderRadius: "0px 0px 50px 50px",
         background: "var(--gradient)",
@@ -25,7 +26,7 @@ function Header() {
         </Typography>
         <Typography>Let's start learning</Typography>
       </Box>
-      <Link href={"/coins"}>
+      <Link href={"/current-balance"}>
         <Box
           sx={{
             display: "flex",

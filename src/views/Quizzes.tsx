@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import Header from "../components/Header";
-import TopicQuizzes from "./TopicQuizzes";
+import TopicQuizzes from "../components/TopicQuizzes";
 
 export default function Quizzes() {
   return (
@@ -18,7 +18,7 @@ export default function Quizzes() {
           display: "flex",
           flexDirection: "column",
           gap: 2,
-          padding: { xs: "20px", md: 0 },
+          padding: { xs: "0 20px 0 20px", md: 0 },
         }}
       >
         <TopicQuizzes />

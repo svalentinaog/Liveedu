@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
-import TopicCard from "../components/TopicCard";
+import TopicCard from "./TopicCard.tsx";
 import useTopicQuizzesViewModel from "../viewmodels/useTopicQuizzes.ts";
 
 export default function TopicQuizzes() {
