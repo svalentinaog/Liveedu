@@ -13,4 +13,5 @@ export const BackButton = styled(Button)`
   color: var(--dark-gray);
   background: transparent;
   cursor: default;
+  padding: 0
 `;

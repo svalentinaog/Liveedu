@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 
 export const NextButton = styled(Button)`
-  width: 7%;
+  width: auto;
   border-radius: 16px;
   display: none;
 

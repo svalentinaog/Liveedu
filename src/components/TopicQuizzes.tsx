@@ -4,7 +4,7 @@ import TopicCard from "./TopicCard.tsx";
 import useTopicQuizzesViewModel from "../viewmodels/useTopicQuizzes.ts";
 
 export default function TopicQuizzes() {
-  const { topicQuizzes } = useTopicQuizzesViewModel();
+  const { topicQuizzes, goToQuiz } = useTopicQuizzesViewModel();
 
   return (
     <Box
@@ -14,7 +14,7 @@ export default function TopicQuizzes() {
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "start",
-        gap: { xs: 1, md: 2 },
+        gap: 2,
       }}
     >
       <Typography
@@ -27,11 +27,11 @@ export default function TopicQuizzes() {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          gap: { xs: 1, md: 2 },
+          gap: 1.5,
         }}
       >
-        {topicQuizzes.map((topic, index) => (
-          <TopicCard key={index} topic={topic} />
+        {topicQuizzes.map((topic) => (
+          <TopicCard key={topic.id} topic={topic} onClick={goToQuiz} />
         ))}
       </Box>
     </Box>

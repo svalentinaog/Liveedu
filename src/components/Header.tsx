@@ -26,7 +26,10 @@ function Header() {
         </Typography>
         <Typography>Let's start learning</Typography>
       </Box>
-      <Link href={"/current-balance"}>
+      <Link
+        href={"/current-balance"}
+        sx={{ color: "var(--dark-gray)", textDecoration: "none" }}
+      >
         <Box
           sx={{
             display: "flex",

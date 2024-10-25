@@ -8,10 +8,12 @@ export default function Home() {
   return (
     <Box
       sx={{
+        width: "100%",
+        height: "100%",
         display: "flex",
         flexDirection: "column",
-        gap: 6,
-        paddingBottom: 8,
+        gap: { xs: 4, md: 6 },
+        marginBottom: { xs: 10, md: 4 },
       }}
     >
       <Box
@@ -23,7 +25,7 @@ export default function Home() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: 6,
+          gap: { xs: 4, md: 6 },
           padding: "0 20px 0 20px",
         }}
       >
@@ -44,7 +46,25 @@ export default function Home() {
           </Typography>
           <Courses />
         </Box>
-        <TopicsToStudy />
+
+        <Box
+          sx={{
+            width: "auto",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "start",
+            gap: 2,
+          }}
+        >
+          <Typography
+            sx={{ fontWeight: "bold", fontSize: { xs: "16px", md: "24px" } }}
+          >
+            Topics to study
+          </Typography>
+
+          <TopicsToStudy topics={[]} />
+        </Box>
       </Box>
     </Box>
   );

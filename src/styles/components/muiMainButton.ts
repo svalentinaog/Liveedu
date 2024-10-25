@@ -8,6 +8,7 @@ export const MainButton = styled(Button)({
   textTransform: "capitalize",
   borderRadius: "16px",
   padding: 16,
+  position: "initial",
   transition: "all 0.3s ease",
   boxShadow: "0px 4px 2px -4px var(--blue-shadow)",
   "&:hover": {

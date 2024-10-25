@@ -74,8 +74,13 @@ export default function Statistics() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: 2,
-        padding: { xs: "0", md: "0 20px 0 20px", sm: "0 20px 0 20px" },
+        gap: { xs: 4, md: 6 },
+        padding: {
+          xs: "0",
+          md: "0 20px 0 20px",
+          sm: "0 20px 0 20px",
+        },
+        marginBottom: { xs: 8, md: 4 },
       }}
     >
       <Header />
@@ -83,33 +88,39 @@ export default function Statistics() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: 2,
-          padding: { xs: "20px" },
+          gap: 4,
+          padding: "0 20px 20px 20px",
         }}
       >
-        <Box sx={{ p: 3, bgcolor: "background.paper" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
           <Chart data={timeSpentData} title="Time spent in the app" />
           <Chart data={passedTestsData} title="Passed tests" />
         </Box>
-      </Box>
 
-      <Box
-        sx={{
-          width: "auto",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          alignItems: "start",
-          gap: { xs: 1, md: 2 },
-        }}
-      >
-        <Typography
-          sx={{ fontWeight: "bold", fontSize: { xs: "16px", md: "24px" } }}
+        <Box
+          sx={{
+            width: "auto",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "start",
+            gap: { xs: 1, md: 2 },
+          }}
         >
-          Latest courses
-        </Typography>
+          <Typography
+            sx={{ fontWeight: "bold", fontSize: { xs: "16px", md: "24px" } }}
+          >
+            Latest courses
+          </Typography>
 
-        <Courses />
+          <Courses />
+        </Box>
       </Box>
     </Box>
   );

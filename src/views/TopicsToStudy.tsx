@@ -1,39 +1,31 @@
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
 import TopicCard from "../components/TopicCard";
-import useTopicsToStudyViewModel from "../viewmodels/useTopicsToStudy";
+import useCoursesViewModel from "../viewmodels/useCourses";
+import { ITopic } from "../models/CoursesContent";
 
-export default function TopicsToStudy() {
-  const { topicsToStudy } = useTopicsToStudyViewModel();
+interface ITopicsToStudyProps {
+  topics: ITopic[];
+}
+
+export default function TopicsToStudy({ topics }: ITopicsToStudyProps) {
+  const { goToTopicDetail } = useCoursesViewModel();
 
   return (
     <Box
       sx={{
-        width: "auto",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
-        alignItems: "start",
-        gap: { xs: 1, md: 2 },
+        gap: 1.5,
       }}
     >
-      <Typography
-        sx={{ fontWeight: "bold", fontSize: { xs: "16px", md: "24px" } }}
-      >
-        Topics to study
-      </Typography>
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          gap: { xs: 1, md: 2 },
-        }}
-      >
-        {topicsToStudy.map((topic, index) => (
-          <TopicCard key={index} topic={topic} />
-        ))}
-      </Box>
+      {topics.map((topic) => (
+        <TopicCard
+          key={topic.id}
+          topic={topic}
+          onClick={() => goToTopicDetail(topic.id, topic.id)}
+        />
+      ))}
     </Box>
   );
 }

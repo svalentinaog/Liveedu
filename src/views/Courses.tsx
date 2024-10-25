@@ -3,7 +3,7 @@ import CourseCard from "../components/CourseCard";
 import useCoursesViewModel from "../viewmodels/useCourses";
 
 export default function Courses() {
-  const { courses } = useCoursesViewModel();
+  const { courses, goToCourseDetail } = useCoursesViewModel();
 
   return (
     <Box
@@ -14,8 +14,12 @@ export default function Courses() {
         gap: 4,
       }}
     >
-      {courses.map((course, index) => (
-        <CourseCard key={index} course={course} />
+      {courses.map((course) => (
+        <CourseCard
+          key={course.id}
+          course={course}
+          onClick={goToCourseDetail}
+        />
       ))}
     </Box>
   );

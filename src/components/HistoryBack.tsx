@@ -2,29 +2,27 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useHistoryBack } from "../viewmodels/useHistoryBack";
 import { BackButton } from "../styles/components/muiBackButton";
 import { Box } from "@mui/system";
+import { IconButton } from "@mui/material";
 
 export default function HistoryBack() {
-  const { goBack, viewName } = useHistoryBack();
+  const { goBack } = useHistoryBack();
 
   return (
     <BackButton onClick={goBack}>
       <Box
         sx={{
+          width: "100%",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
           borderRadius: "12px",
-          padding: 1,
           cursor: "pointer",
           transition: "transform 0.3s ease",
-          "&:hover": {
-            backgroundColor: "rgba(0, 0, 0, 0.05)",
-          },
+          backgroundColor: "transparent",
         }}
       >
-        <ArrowBackIcon />
+        <IconButton edge="start" color="inherit" aria-label="back">
+          <ArrowBackIcon />
+        </IconButton>
       </Box>
-      {viewName}
     </BackButton>
   );
 }

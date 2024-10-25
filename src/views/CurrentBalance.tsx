@@ -11,7 +11,7 @@ export default function CurrentBalance() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: 6,
+        gap: { xs: 4, md: 6 },
         padding: { xs: "0", md: "0 20px", sm: "0 20px" },
       }}
     >
@@ -24,18 +24,35 @@ export default function CurrentBalance() {
           alignItems: "center",
           justifyContent: { xs: "center", md: "space-between" },
           padding: {
-            xs: "0px 50px",
-            md: "0px 50px",
-            sm: "0px 50px",
+            xs: "0px 20px",
+            md: "0px 20px",
+            sm: "0px 20px",
           },
           borderRadius: "0px 0px 50px 50px",
           background: "var(--gradient)",
           gap: 2,
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "start",
+            alignItems: "start",
+          }}
+        >
           <HistoryBack />
         </Box>
+        <Typography
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: { xs: "center", md: "end" },
+            alignItems: "start",
+          }}
+        >
+          Current balance
+        </Typography>
         <Box
           sx={{
             display: "flex",

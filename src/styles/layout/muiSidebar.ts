@@ -72,12 +72,7 @@ export const NavElement = styled(Link)<NavElementProps>`
      svg {
       fill: var(--blue);
     }
-  `} {
-    background: transparent;
-    svg {
-      fill: var(--dark-gray);
-    }
-  }
+  `}
 
   &:hover {
     background: var(--translucent-nav);
@@ -87,6 +82,23 @@ export const NavElement = styled(Link)<NavElementProps>`
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    background: none;
+    padding: 5px;
+
+    ${({ isActive }) =>
+      isActive &&
+      `
+      background: none;
+      svg {
+        fill: var(--blue);
+      }
+    `}
+
+    &:hover {
+      background: none;
+      svg {
+        fill: var(--lilac);
+      }
+    }
   }
 `;

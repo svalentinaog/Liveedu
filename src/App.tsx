@@ -10,6 +10,9 @@ import Layout from "./components/Layout";
 import Statistics from "./views/Statistics";
 import Profile from "./views/Profile";
 import CurrentBalance from "./views/CurrentBalance";
+import CourseDetail from "./views/CourseDetail";
+import QuizDetail from "./views/QuizDetail";
+import TopicDetail from "./views/TopicDetail";
 
 export default function App() {
   return (
@@ -26,6 +29,9 @@ export default function App() {
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/current-balance" element={<CurrentBalance />} />
+        <Route path="/course/:id" element={<CourseDetail />} />
+        <Route path="/course/:courseId/topic/:id" element={<TopicDetail />} />
+        <Route path="/quiz/:id" element={<QuizDetail />} />
       </Route>
     </Routes>
   );

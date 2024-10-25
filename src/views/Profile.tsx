@@ -11,7 +11,7 @@ export default function Profile() {
       sx={{
         display: "flex",
         flexDirection: "column",
-        gap: 6,
+        gap: { xs: 4, md: 6 },
         padding: { xs: "0", md: "0 20px", sm: "0 20px" },
       }}
     >
