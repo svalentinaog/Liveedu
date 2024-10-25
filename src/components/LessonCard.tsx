@@ -2,7 +2,6 @@ import { Typography, IconButton } from "@mui/material";
 import { Box } from "@mui/system";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
-import { useState } from "react";
 
 interface ILessonCardProps {
   lesson: {
@@ -10,25 +9,25 @@ interface ILessonCardProps {
     title: string;
     description: string;
   };
+  isPlaying: boolean;
+  onClick: (id: number) => void;
 }
 
-export default function LessonCard({ lesson }: ILessonCardProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handleTogglePlay = () => {
-    setIsPlaying((prev) => !prev);
-  };
-
+export default function LessonCard({
+  lesson,
+  isPlaying,
+  onClick,
+}: ILessonCardProps) {
   return (
     <Box
-      onClick={handleTogglePlay}
+      onClick={() => onClick(lesson.id)}
       sx={{
         width: { xs: "100%", md: "100%", sm: "100%" },
         display: "flex",
         justifyContent: "space-between",
         padding: { xs: "7px 20px 7px 20px", md: "10px 40px 10px 40px" },
         borderRadius: "16px",
-        background: "var(--translucent-lilac)",
+        background: isPlaying ? "var(--gradient)" : "var(--translucent-lilac)",
         alignItems: "center",
         gap: 2,
         transition: "transform 0.3s ease",
@@ -44,6 +43,7 @@ export default function LessonCard({ lesson }: ILessonCardProps) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          alignItems: "center",
           gap: { xs: 2, md: 4 },
         }}
       >
@@ -56,6 +56,10 @@ export default function LessonCard({ lesson }: ILessonCardProps) {
           </Typography>
         </Box>
         <IconButton
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick(lesson.id);
+          }}
           sx={{
             color: "var(--blue)",
             background: "var(--translucent-gradient)",

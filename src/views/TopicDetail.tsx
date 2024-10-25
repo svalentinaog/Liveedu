@@ -1,12 +1,18 @@
 import { IconButton, Typography, Card, Box } from "@mui/material";
 import HistoryBack from "../components/HistoryBack";
 import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import Lessons from "./Lessons";
 import useCourseDetailViewModel from "../viewmodels/useCourseDetailViewModel";
+import { useState } from "react";
 
 export default function TopicDetail() {
   const { topic } = useCourseDetailViewModel();
+  const [isPlaying, setIsPlaying] = useState(false);
 
+  const handleTogglePlay = () => {
+    setIsPlaying((prev) => !prev);
+  };
   return (
     <Box
       sx={{
@@ -43,7 +49,7 @@ export default function TopicDetail() {
               position: "relative",
               width: "100%",
               borderRadius: "20px",
-              background: "var(--lilac)",
+              background: "var(--white-app)",
               border: "none",
               boxShadow: "none",
               display: "flex",
@@ -71,17 +77,18 @@ export default function TopicDetail() {
               />
             </Box>
             <IconButton
+              onClick={handleTogglePlay}
               sx={{
                 position: "absolute",
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                bgcolor: "primary.main",
-                color: "white",
+                color: "var(--dark-gray)",
+                background: "var(--gradient)",
                 "&:hover": { bgcolor: "primary.dark" },
               }}
             >
-              <PauseIcon />
+              {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
             </IconButton>
             <Box
               sx={{
