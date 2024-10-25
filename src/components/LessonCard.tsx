@@ -21,6 +21,7 @@ export default function LessonCard({ lesson }: ILessonCardProps) {
 
   return (
     <Box
+      onClick={handleTogglePlay}
       sx={{
         width: { xs: "100%", md: "100%", sm: "100%" },
         display: "flex",
@@ -39,7 +40,7 @@ export default function LessonCard({ lesson }: ILessonCardProps) {
     >
       <Box
         sx={{
-          width: "auto",
+          width: "100%",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
@@ -54,11 +55,20 @@ export default function LessonCard({ lesson }: ILessonCardProps) {
             {lesson.description}
           </Typography>
         </Box>
+        <IconButton
+          sx={{
+            color: "var(--blue)",
+            background: "var(--translucent-gradient)",
+            position: "initial",
+            borderRadius: "50%",
+            padding: "10px",
+            width: "40px",
+            height: "40px",
+          }}
+        >
+          {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
+        </IconButton>
       </Box>
-
-      <IconButton onClick={handleTogglePlay} sx={{ color: "primary.main" }}>
-        {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
-      </IconButton>
     </Box>
   );
 }
