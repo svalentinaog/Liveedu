@@ -63,7 +63,7 @@ export default function SignUp() {
 
         <FormActions>
           <MainButton onClick={methods.handleSignUpForm}>Create</MainButton>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" sx={{ lineHeight: "normal" }}>
             Do you have an account? <Link to="/sign-in">Sign In</Link>
           </Typography>
         </FormActions>

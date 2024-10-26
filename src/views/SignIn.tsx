@@ -48,7 +48,7 @@ export default function SignIn() {
         </FormContent>
         <FormActions>
           <MainButton>Login</MainButton>
-          <Typography variant="subtitle1">
+          <Typography variant="subtitle1" sx={{ lineHeight: "normal" }}>
             Don't have an account? <Link to="/sign-up">Sign Up</Link>
           </Typography>
         </FormActions>

@@ -17,7 +17,7 @@ export default function CourseDetail() {
     <Box
       sx={{
         width: "100%",
-        height: { xs: "92vh", md: "98vh" },
+        height: { xs: "90vh", md: "98vh" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",

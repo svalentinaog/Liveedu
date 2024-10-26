@@ -5,7 +5,7 @@ export const FormContainer = styled(Grid)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
+  padding: 16px 16px 0;
 
   @media (max-width: 600px) {
     justify-content: space-between;
