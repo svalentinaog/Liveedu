@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
-import { Button, Typography } from "@mui/material";
-import usePaymentViewModel from "../viewmodels/usePayment";
-import PaymentCard from "../components/PaymentCard";
+import { Typography } from "@mui/material";
 import HistoryBack from "../components/HistoryBack";
+import TransitionCard from "../components/TransitionCard";
+import useTransitionHistoryViewModel from "../viewmodels/useTransitionHistory";
 
-export default function Payment() {
-  const { payment } = usePaymentViewModel();
+export default function TransitionHistory() {
+  const { transition } = useTransitionHistoryViewModel();
 
   return (
     <Box
@@ -53,7 +52,7 @@ export default function Payment() {
               alignItems: "center",
             }}
           >
-            Payment
+            Transition
           </Typography>
           <Box
             sx={{
@@ -63,22 +62,12 @@ export default function Payment() {
               gap: 2,
             }}
           >
-            {payment.map((payment) => (
-              <PaymentCard key={payment.id} payment={payment} />
+            {transition.map((transition) => (
+              <TransitionCard key={transition.id} transition={transition} />
             ))}
           </Box>
         </Box>
       </Box>
-      <Link to="/new-card" style={{ textAlign: "center" }}>
-        <Button
-          sx={{
-            textTransform: "capitalize",
-            color: "var(--dark-gray)",
-          }}
-        >
-          Add new card
-        </Button>
-      </Link>
     </Box>
   );
 }

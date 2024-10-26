@@ -15,6 +15,10 @@ import QuizDetail from "./views/QuizDetail";
 import TopicDetail from "./views/TopicDetail";
 import Payment from "./views/Payment";
 import NewPaymentCard from "./views/NewPaymentCard";
+import TransitionHistory from "./views/TransitionHistory";
+import TermsOfUse from "./views/TermsOfUse";
+import Support from "./views/Support";
+import PersonalInformation from "./views/PersonalInformation";
 
 export default function App() {
   return (
@@ -30,8 +34,12 @@ export default function App() {
         <Route path="/quizzes" element={<Quizzes />} />
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/personal-information" element={<PersonalInformation />} />
+        <Route path="/transaction-history" element={<TransitionHistory />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/new-card" element={<NewPaymentCard />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/current-balance" element={<CurrentBalance />} />
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/course/:courseId/topic/:id" element={<TopicDetail />} />

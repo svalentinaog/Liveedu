@@ -1,13 +1,8 @@
-import { Link } from "react-router-dom";
-import { Box } from "@mui/system";
-import { Button, Typography } from "@mui/material";
-import usePaymentViewModel from "../viewmodels/usePayment";
-import PaymentCard from "../components/PaymentCard";
+import { Typography } from "@mui/material";
 import HistoryBack from "../components/HistoryBack";
+import { Box } from "@mui/system";
 
-export default function Payment() {
-  const { payment } = usePaymentViewModel();
-
+export default function PersonalInformation() {
   return (
     <Box
       sx={{
@@ -53,32 +48,10 @@ export default function Payment() {
               alignItems: "center",
             }}
           >
-            Payment
+            Account settings
           </Typography>
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
-          >
-            {payment.map((payment) => (
-              <PaymentCard key={payment.id} payment={payment} />
-            ))}
-          </Box>
         </Box>
       </Box>
-      <Link to="/new-card" style={{ textAlign: "center" }}>
-        <Button
-          sx={{
-            textTransform: "capitalize",
-            color: "var(--dark-gray)",
-          }}
-        >
-          Add new card
-        </Button>
-      </Link>
     </Box>
   );
 }
