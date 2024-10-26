@@ -16,3 +16,4 @@ export * from "./components/muiNextButton";
 export * from "./components/muiOnboardingContent";
 export * from "./components/muiOnboardingContainer";
 export * from "./components/muiTopicCard";
+export * from "./components/muiCourseCard";
