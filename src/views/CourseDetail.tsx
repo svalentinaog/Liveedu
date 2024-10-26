@@ -22,7 +22,7 @@ export default function CourseDetail() {
         flexDirection: "column",
         justifyContent: "space-between",
         gap: { xs: 4, md: 6 },
-        padding: "20px",
+        padding: "20px 20px 0",
         marginBottom: { xs: 8, md: 2 },
       }}
     >
