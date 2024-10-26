@@ -1,32 +1,19 @@
-import { Box } from "@mui/material";
-import { useItemViewModel } from "../viewmodels/useItem";
+import { ItemContainer, ProfileContainer } from "../styles/mui";
 import ItemCard from "../components/ItemCard";
 import Header from "../components/Header";
+import { useItemViewModel } from "../viewmodels/useItem";
 
 export default function Profile() {
   const { profileItems } = useItemViewModel();
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: { xs: 4, md: 6 },
-        padding: { xs: "0", md: "0 20px", sm: "0 20px" },
-      }}
-    >
+    <ProfileContainer>
       <Header />
-
-      <Box
-        display="flex"
-        flexDirection="column"
-        gap={2}
-        padding={{ xs: "20px", md: 0 }}
-      >
+      <ItemContainer>
         {profileItems.map((item) => (
           <ItemCard key={item.path} item={item} />
         ))}
-      </Box>
-    </Box>
+      </ItemContainer>
+    </ProfileContainer>
   );
 }

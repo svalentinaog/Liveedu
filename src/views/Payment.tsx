@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import usePaymentViewModel from "../viewmodels/usePayment";
 import PaymentCard from "../components/PaymentCard";
-import HistoryBack from "../components/HistoryBack";
+import PageHeader from "../components/PageHeader";
 
 export default function Payment() {
   const { payment } = usePaymentViewModel();
@@ -23,52 +23,20 @@ export default function Payment() {
       <Box
         sx={{
           width: "100%",
+          display: "flex",
+          flexDirection: "column",
           gap: 2,
         }}
       >
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "start",
-            alignItems: "start",
-          }}
-        >
-          <HistoryBack />
-        </Box>
+        <PageHeader title="Payment" />
 
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            gap: 5,
-          }}
-        >
-          <Typography
-            sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            Payment
-          </Typography>
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
-          >
-            {payment.map((payment) => (
-              <PaymentCard key={payment.id} payment={payment} />
-            ))}
-          </Box>
-        </Box>
+        {/* Tarjetas de pago */}
+        {payment.map((payment) => (
+          <PaymentCard key={payment.id} payment={payment} />
+        ))}
       </Box>
+
+      {/* Añadir tarjeta de pago */}
       <Link to="/new-card" style={{ textAlign: "center" }}>
         <Button
           sx={{

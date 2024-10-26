@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { SvgIconComponent } from "@mui/icons-material";
+import { IconContainer, ItemCardContainer } from "../styles/mui";
 
 interface ItemCardProps {
   item: {
@@ -13,34 +14,11 @@ export default function ItemCard({ item }: ItemCardProps) {
   const Icon = item.icon;
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        borderRadius: "16px",
-        gap: 2,
-        cursor: "pointer",
-        transition: "background-color 0.3s",
-        "&:hover": {
-          backgroundColor: "var(--translucent-lilac)",
-        },
-      }}
-      onClick={item.onClick}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "14px",
-          backgroundColor: "var(--translucent-lilac)",
-          width: "55px",
-          height: "55px",
-        }}
-      >
+    <ItemCardContainer onClick={item.onClick}>
+      <IconContainer>
         <Icon />
-      </Box>
+      </IconContainer>
       <Typography>{item.text}</Typography>
-    </Box>
+    </ItemCardContainer>
   );
 }

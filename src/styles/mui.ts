@@ -18,3 +18,7 @@ export * from "./components/muiOnboardingContainer";
 export * from "./components/muiTopicCard";
 export * from "./components/muiCourseCard";
 export * from "./components/muiPaymentCard";
+export * from "./components/muiItemCard";
+export * from "./components/muiProfile";
+export * from "./components/muiPageHeader";
+export * from "./components/muiHistoryBack";
