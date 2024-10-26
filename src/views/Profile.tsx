@@ -20,7 +20,7 @@ export default function Profile() {
       <Box
         display="flex"
         flexDirection="column"
-        gap={4}
+        gap={2}
         padding={{ xs: "20px", md: 0 }}
       >
         {profileItems.map((item) => (

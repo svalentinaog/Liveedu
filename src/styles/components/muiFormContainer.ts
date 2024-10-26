@@ -19,3 +19,21 @@ export const FormContainer = styled(Grid)`
     gap: 48px;
   }
 `;
+
+export const FormContainerTwo = styled(Grid)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+
+  @media (max-width: 600px) {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  @media (min-width: 600px) {
+    justify-content: center;
+    min-height: 100vh;
+    gap: 48px;
+  }
+`;

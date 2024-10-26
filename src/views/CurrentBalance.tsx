@@ -18,16 +18,12 @@ export default function CurrentBalance() {
       <Box
         sx={{
           width: { xs: "100vw", md: "100%" },
-          height: "150px",
+          height: { xs: "auto", md: "150px" },
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: { xs: "center", md: "space-between" },
-          padding: {
-            xs: "0px 20px",
-            md: "0px 20px",
-            sm: "0px 20px",
-          },
+          padding: "20px",
           borderRadius: "0px 0px 50px 50px",
           background: "var(--gradient)",
           gap: 2,

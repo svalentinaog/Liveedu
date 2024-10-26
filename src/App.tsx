@@ -13,6 +13,8 @@ import CurrentBalance from "./views/CurrentBalance";
 import CourseDetail from "./views/CourseDetail";
 import QuizDetail from "./views/QuizDetail";
 import TopicDetail from "./views/TopicDetail";
+import Payment from "./views/Payment";
+import NewPaymentCard from "./views/NewPaymentCard";
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ export default function App() {
         <Route path="/quizzes" element={<Quizzes />} />
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/new-card" element={<NewPaymentCard />} />
         <Route path="/current-balance" element={<CurrentBalance />} />
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/course/:courseId/topic/:id" element={<TopicDetail />} />

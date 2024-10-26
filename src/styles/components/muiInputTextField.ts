@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { TextField } from "@mui/material";
 
 export const InputTextField = styled(TextField)`
+  width: 100%;
   border-radius: 16px;
 
   & .MuiOutlinedInput-root {
