@@ -1,17 +1,33 @@
 import { Box } from "@mui/system";
 import PageHeader from "../components/PageHeader";
 import { Typography } from "@mui/material";
-import { ContainerStarsImage, StarsImage } from "../styles/mui";
+import {
+  btnNextMobileNone,
+  ContainerStarsImage,
+  MainButton,
+  NextButton,
+  StarsImage,
+} from "../styles/mui";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function QuizCompleted() {
   return (
-    <Box sx={{ padding: "20px" }}>
+    <Box
+      sx={{
+        width: "100%",
+        padding: "20px",
+        height: { xs: "90vh", md: "100%" },
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
+        gap: 4,
+      }}
+    >
       <PageHeader title="Quiz completed" />
 
       <Box
         sx={{
-          width: "100%",
-          height: "90vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -28,28 +44,45 @@ export default function QuizCompleted() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: 0.5,
+            gap: 3,
           }}
         >
-          <Typography variant="h3" fontWeight={"bold"}>
-            Congratulations
+          <Box sx={{ textAlign: "center" }}>
+            <Typography
+              sx={{ fontSize: { xs: "24px", md: "40px" }, fontWeight: "bold" }}
+            >
+              Congratulations
+            </Typography>
+            <Typography sx={{ fontSize: { xs: "16px", md: "20px" } }}>
+              You have completed the test
+            </Typography>
+          </Box>
+          <Typography sx={{ fontSize: { xs: "16px", md: "18px" } }}>
+            14 correct answers
           </Typography>
-          <Typography variant="h5">You have completed the test</Typography>
-        </Box>
-        <Typography variant="body1">14 correct answers</Typography>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 0.5,
-          }}
-        >
-          <img src="svg/coins.svg" alt="" />
-          <Typography>14</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 0.5,
+            }}
+          >
+            <img src="svg/coins.svg" alt="" />
+            <Typography>14</Typography>
+          </Box>
         </Box>
       </Box>
+      {/* Next mobile */}
+      <MainButton sx={btnNextMobileNone} variant="contained">
+        Next
+      </MainButton>
+
+      {/* Next Desktop */}
+      <NextButton size="large" variant="text" endIcon={<ArrowForwardIcon />}>
+        Next
+      </NextButton>
     </Box>
   );
 }
