@@ -1,5 +1,5 @@
 import { Box, Card, Typography } from "@mui/material";
-import useCourseDetailViewModel from "../viewmodels/useCourseDetailViewModel";
+import useCourseDetailViewModel from "../viewmodels/useCourseDetail";
 import { AccessTime, MenuBook, PlayCircleOutline } from "@mui/icons-material";
 import HistoryBack from "../components/HistoryBack";
 import TopicsToStudy from "./TopicsToStudy";
@@ -205,7 +205,9 @@ export default function CourseDetail() {
           </Card>
         </Box>
 
-        <TopicsToStudy topics={course?.topics || []} />
+        {course && (
+          <TopicsToStudy topics={course.topics || []} courseId={course.id} />
+        )}
       </Box>
 
       <Box

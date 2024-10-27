@@ -3,7 +3,7 @@ import HistoryBack from "../components/HistoryBack";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import Lessons from "./Lessons";
-import useCourseDetailViewModel from "../viewmodels/useCourseDetailViewModel";
+import useCourseDetailViewModel from "../viewmodels/useCourseDetail";
 import { useState } from "react";
 
 export default function TopicDetail() {

@@ -4,9 +4,9 @@ import {
   ContainerCourseImage,
   CourseImage,
   CoursePrice,
-  DescriptionCourseCard,
   ImageCoursePrice,
   SubContainerCourseCard,
+  SubTitleCourseCard,
   TextCoursePrice,
   TitleCourseCard,
 } from "../styles/mui";
@@ -17,6 +17,7 @@ interface ICourseCardProps {
     starPoints: number;
     image: string;
     title: string;
+    subtitle: string;
     description: string;
     price: number;
   };
@@ -32,7 +33,7 @@ export default function CourseCard({ course, onClick }: ICourseCardProps) {
       <SubContainerCourseCard>
         <Box>
           <TitleCourseCard>{course.title}</TitleCourseCard>
-          <DescriptionCourseCard>{course.description}</DescriptionCourseCard>
+          <SubTitleCourseCard>{course.subtitle}</SubTitleCourseCard>
         </Box>
         <CoursePrice>
           <ImageCoursePrice>

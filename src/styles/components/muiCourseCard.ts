@@ -57,7 +57,7 @@ export const TitleCourseCard = styled(Typography)`
   }
 `;
 
-export const DescriptionCourseCard = styled(Typography)`
+export const SubTitleCourseCard = styled(Typography)`
   font-size: 12px;
   font-weight: 400;
 

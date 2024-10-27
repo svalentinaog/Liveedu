@@ -76,12 +76,12 @@ export default function QuizCompleted() {
       </Box>
       {/* Next mobile */}
       <MainButton sx={btnNextMobileNone} variant="contained">
-        Next
+        Save
       </MainButton>
 
       {/* Next Desktop */}
       <NextButton size="large" variant="text" endIcon={<ArrowForwardIcon />}>
-        Next
+        Save
       </NextButton>
     </Box>
   );
