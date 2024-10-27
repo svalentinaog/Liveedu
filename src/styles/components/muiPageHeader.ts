@@ -35,3 +35,12 @@ export const PageTitle = styled(Typography)`
   align-items: center;
   flex: 2;
 `;
+
+export const PageOther = styled(Typography)`
+  width: 100%;
+  font-size: 18px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  flex: 1;
+`;

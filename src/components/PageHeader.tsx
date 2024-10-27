@@ -1,13 +1,13 @@
 import { Typography } from "@mui/material";
-import { GoBack, Head, HeadContent, PageTitle } from "../styles/mui";
+import { GoBack, Head, HeadContent, PageOther, PageTitle } from "../styles/mui";
 import HistoryBack from "./HistoryBack";
-import { Box } from "@mui/system";
 
 interface PageHeaderProps {
   title: string;
+  other?: string;
 }
 
-export default function PageHeader({ title }: PageHeaderProps) {
+export default function PageHeader({ title, other }: PageHeaderProps) {
   return (
     <Head>
       <HeadContent>
@@ -17,7 +17,7 @@ export default function PageHeader({ title }: PageHeaderProps) {
         <PageTitle>
           <Typography>{title}</Typography>
         </PageTitle>
-        <Box sx={{ flex: 1 }}></Box>
+        <PageOther>{other}</PageOther>
       </HeadContent>
     </Head>
   );

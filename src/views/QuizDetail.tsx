@@ -12,16 +12,21 @@ import { btnNextMobileNone, MainButton, NextButton } from "../styles/mui";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ITopicQuizzesContent } from "../models/TopicQuizzesContent";
-import HistoryBack from "../components/HistoryBack";
 import Quiz from "../components/Quiz";
 import useTopicQuizzesViewModel from "../viewmodels/useTopicQuizzes";
+import PageHeader from "../components/PageHeader";
 
 export default function QuizDetail() {
   const { id } = useParams<{ id: string }>();
   const [isPlaying, setIsPlaying] = useState(false);
   const [quiz, setQuiz] = useState<ITopicQuizzesContent | null>(null);
-  const { getQuizById, currentQuestionIndex, nextQuiz, selectOption } =
-    useTopicQuizzesViewModel();
+  const {
+    getQuizById,
+    currentQuizIndex,
+    currentQuestionIndex,
+    nextQuiz,
+    selectOption,
+  } = useTopicQuizzesViewModel();
 
   useEffect(() => {
     if (id) {
@@ -59,16 +64,10 @@ export default function QuizDetail() {
             gap: 2,
           }}
         >
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "start",
-              alignItems: "start",
-            }}
-          >
-            <HistoryBack />
-          </Box>
+          <PageHeader
+            title={quiz.title}
+            other={`${currentQuizIndex + 1}/${quiz.questions.length}`}
+          />
           <Card
             sx={{
               position: "relative",
