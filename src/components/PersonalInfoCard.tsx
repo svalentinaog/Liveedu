@@ -1,26 +1,30 @@
 import { Typography } from "@mui/material";
-import { SvgIconComponent } from "@mui/icons-material";
-import { IconContainer, ItemCardContainer } from "../styles/mui";
+import { Edit, SvgIconComponent } from "@mui/icons-material";
+import {
+  IconContainer,
+  PersonalInfoCardContainer,
+  ItemContent,
+} from "../styles/mui";
 
 interface UserPersonalInfoCardProps {
-  item: {
-    icon: SvgIconComponent;
+  user: {
     text: string;
-    onClick: () => void;
+    icon: SvgIconComponent;
   };
 }
 
 export default function UserPersonalInfoCard({
-  item,
+  user,
 }: UserPersonalInfoCardProps) {
-  const Icon = item.icon;
-
   return (
-    <ItemCardContainer onClick={item.onClick}>
-      <IconContainer>
-        <Icon />
-      </IconContainer>
-      <Typography>{item.text}</Typography>
-    </ItemCardContainer>
+    <PersonalInfoCardContainer>
+      <ItemContent>
+        <IconContainer>
+          <user.icon />
+        </IconContainer>
+        <Typography>{user.text}</Typography>
+      </ItemContent>
+      <Edit />
+    </PersonalInfoCardContainer>
   );
 }

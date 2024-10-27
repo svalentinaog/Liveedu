@@ -10,14 +10,15 @@ export default function TransitionHistory() {
     <Box
       sx={{
         width: "100%",
-        height: { xs: "90vh", md: "100%" },
+        height: "100%",
         display: "flex",
         flexDirection: "column",
         padding: "20px",
-        justifyContent: "space-between",
+        justifyContent: "start",
         gap: 2,
       }}
     >
+      <PageHeader title="Transition History" />
       <Box
         sx={{
           width: "100%",
@@ -26,7 +27,6 @@ export default function TransitionHistory() {
           gap: 2,
         }}
       >
-        <PageHeader title="Transition History" />
         {/* Transaciones */}
         {transition.map((transition) => (
           <TransitionCard key={transition.id} transition={transition} />

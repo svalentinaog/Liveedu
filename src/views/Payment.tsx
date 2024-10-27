@@ -35,7 +35,6 @@ export default function Payment() {
           <PaymentCard key={payment.id} payment={payment} />
         ))}
       </Box>
-
       {/* Añadir tarjeta de pago */}
       <Link to="/new-card" style={{ textAlign: "center" }}>
         <Button
