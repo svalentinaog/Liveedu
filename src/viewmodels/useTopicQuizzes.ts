@@ -44,7 +44,7 @@ export default function useTopicQuizzesViewModel() {
       setSelectedOption(null);
       setResult(null);
     } else {
-      navigate("/completion");
+      navigate("/quiz-completed");
     }
   };
 

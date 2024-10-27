@@ -23,6 +23,7 @@ import Buy from "./views/Buy";
 import PromoCode from "./views/PromoCode";
 import AdditionalIncome from "./views/AdditionalIncome";
 import SocialMedia from "./views/SocialMedia";
+import QuizCompleted from "./views/QuizCompleted";
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/course/:courseId/topic/:id" element={<TopicDetail />} />
         <Route path="/quiz/:id" element={<QuizDetail />} />
+        <Route path="/quiz-completed" element={<QuizCompleted />} />
         <Route path="/current-balance" element={<CurrentBalance />} />
         <Route path="/buy" element={<Buy />} />
         <Route path="/promo-code" element={<PromoCode />} />

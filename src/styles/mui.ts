@@ -23,3 +23,4 @@ export * from "./components/muiProfile";
 export * from "./components/muiPageHeader";
 export * from "./components/muiHistoryBack";
 export * from "./components/muiQuiz";
+export * from "./components/muiStars";
