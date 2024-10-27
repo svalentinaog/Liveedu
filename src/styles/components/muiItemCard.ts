@@ -56,7 +56,6 @@ export const IconContainer = styled(Box)`
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  background-color: var(--translucent-lilac);
   width: 55px;
   height: 55px;
 `;

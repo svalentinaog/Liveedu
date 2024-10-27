@@ -15,7 +15,7 @@ export default function ItemCard({ item }: ItemCardProps) {
 
   return (
     <ItemCardContainer onClick={item.onClick}>
-      <IconContainer>
+      <IconContainer sx={{ background: "var(--translucent-lilac)" }}>
         <Icon />
       </IconContainer>
       <Typography>{item.text}</Typography>

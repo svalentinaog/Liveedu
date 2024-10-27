@@ -22,3 +22,4 @@ export * from "./components/muiItemCard";
 export * from "./components/muiProfile";
 export * from "./components/muiPageHeader";
 export * from "./components/muiHistoryBack";
+export * from "./components/muiQuiz";

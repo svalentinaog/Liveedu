@@ -1,0 +1,16 @@
+.option {
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+.option.selected {
+  background-color: purple;
+}
+
+.option.correct {
+  background-color: green;
+}
+
+.option.incorrect {
+  background-color: red;
+}

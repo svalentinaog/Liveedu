@@ -19,7 +19,7 @@ export default function UserPersonalInfoCard({
   return (
     <PersonalInfoCardContainer>
       <ItemContent>
-        <IconContainer>
+        <IconContainer sx={{ background: "var(--translucent-lilac)" }}>
           <user.icon />
         </IconContainer>
         <Typography>{user.text}</Typography>

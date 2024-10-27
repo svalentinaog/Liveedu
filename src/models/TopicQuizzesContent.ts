@@ -1,9 +1,22 @@
-interface ITopicQuizzesContent {
+interface IQuestion {
+  id: number;
+  question: string;
+  options: {
+    a: string;
+    b: string;
+    c: string;
+    d: string;
+  };
+  correctAnswer: "a" | "b" | "c" | "d";
+}
+
+export interface ITopicQuizzesContent {
   id: number;
   title: string;
   description: string;
   image: string;
   duration: number;
+  questions: IQuestion[];
 }
 
 export const TopicQuizzesContent: ITopicQuizzesContent[] = [
@@ -13,6 +26,30 @@ export const TopicQuizzesContent: ITopicQuizzesContent[] = [
     description: "Talking about food in the kitchen",
     image: "/svg/topics/1.svg",
     duration: 30,
+    questions: [
+      {
+        id: 1,
+        question: "What is the main ingredient in a salad?",
+        options: {
+          a: "Tomato",
+          b: "Potato",
+          c: "Carrot",
+          d: "Lettuce",
+        },
+        correctAnswer: "d",
+      },
+      {
+        id: 2,
+        question: "Which item is commonly found in the kitchen?",
+        options: {
+          a: "Sofa",
+          b: "Fork",
+          c: "Pillow",
+          d: "Shampoo",
+        },
+        correctAnswer: "b",
+      },
+    ],
   },
   {
     id: 2,
@@ -20,61 +57,18 @@ export const TopicQuizzesContent: ITopicQuizzesContent[] = [
     description: "Shopping conversation topic near bulletin board",
     image: "/svg/topics/2.svg",
     duration: 40,
-  },
-  {
-    id: 3,
-    title: "Night city",
-    description: "Night walk through the night city and a trip to a cafe",
-    image: "/svg/topics/3.svg",
-    duration: 25,
-  },
-  {
-    id: 4,
-    title: "Plan for the day",
-    description: "Mikey plans his day",
-    image: "/svg/topics/4.svg",
-    duration: 19,
-  },
-  {
-    id: 5,
-    title: "Two friends",
-    description: "Friends talk and tell their stories",
-    image: "/svg/topics/5.svg",
-    duration: 28,
-  },
-  {
-    id: 6,
-    title: "In the kitchen",
-    description: "Talking about food in the kitchen",
-    image: "/svg/topics/1.svg",
-    duration: 30,
-  },
-  {
-    id: 7,
-    title: "Bulletin board",
-    description: "Shopping conversation topic near bulletin board",
-    image: "/svg/topics/2.svg",
-    duration: 40,
-  },
-  {
-    id: 8,
-    title: "Night city",
-    description: "Night walk through the night city and a trip to a cafe",
-    image: "/svg/topics/3.svg",
-    duration: 25,
-  },
-  {
-    id: 9,
-    title: "Plan for the day",
-    description: "Mikey plans his day",
-    image: "/svg/topics/4.svg",
-    duration: 19,
-  },
-  {
-    id: 10,
-    title: "Two friends",
-    description: "Friends talk and tell their stories",
-    image: "/svg/topics/5.svg",
-    duration: 28,
+    questions: [
+      {
+        id: 1,
+        question: "What can you find on a bulletin board?",
+        options: {
+          a: "Posters",
+          b: "Food items",
+          c: "Furniture",
+          d: "Clothes",
+        },
+        correctAnswer: "a",
+      },
+    ],
   },
 ];
