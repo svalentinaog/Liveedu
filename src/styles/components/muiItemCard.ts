@@ -8,7 +8,7 @@ export const ItemCardContainer = styled(Box)`
   gap: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  padding: 0 20px 0 20px;
+  // padding: 0 20px 0 20px;
 
   &:hover {
     background-color: var(--translucent-lilac);

@@ -1,5 +1,6 @@
-import { Link, Typography } from "@mui/material";
+import { Badge, Link, Typography } from "@mui/material";
 import { Box, Grid } from "@mui/system";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 
 function Header() {
   return (
@@ -12,7 +13,7 @@ function Header() {
         alignItems: "center",
         justifyContent: "space-between",
         padding: {
-          xs: "0px 50px",
+          xs: "0px 30px",
           md: "0px 50px",
           sm: "0px 50px",
         },
@@ -26,23 +27,37 @@ function Header() {
         </Typography>
         <Typography>Let's start learning</Typography>
       </Box>
-      <Link
-        href={"/current-balance"}
-        sx={{ color: "var(--dark-gray)", textDecoration: "none" }}
+      <Box
+        sx={{
+          display: "flex",
+          gap: { xs: 2, md: 4 },
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            gap: 0.5,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+        <Link
+          href={"/current-balance"}
+          sx={{ color: "var(--dark-gray)", textDecoration: "none" }}
         >
-          <img src="svg/coins.svg" alt="" />
-          <Typography>400</Typography>
-        </Box>
-        <img src="" alt="" />
-      </Link>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 0.5,
+            }}
+          >
+            <img src="svg/coins.svg" alt="" />
+            <Typography>400</Typography>
+          </Box>
+          <img src="" alt="" />
+        </Link>
+        <Badge badgeContent={1} color="warning">
+          <NotificationsIcon color="action" />
+        </Badge>
+      </Box>
     </Grid>
   );
 }

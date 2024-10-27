@@ -19,6 +19,10 @@ import TransitionHistory from "./views/TransitionHistory";
 import TermsOfUse from "./views/TermsOfUse";
 import Support from "./views/Support";
 import PersonalInformation from "./views/PersonalInformation";
+import Buy from "./views/Buy";
+import PromoCode from "./views/PromoCode";
+import AdditionalIncome from "./views/AdditionalIncome";
+import SocialMedia from "./views/SocialMedia";
 
 export default function App() {
   return (
@@ -40,10 +44,14 @@ export default function App() {
         <Route path="/new-card" element={<NewPaymentCard />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/support" element={<Support />} />
-        <Route path="/current-balance" element={<CurrentBalance />} />
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/course/:courseId/topic/:id" element={<TopicDetail />} />
         <Route path="/quiz/:id" element={<QuizDetail />} />
+        <Route path="/current-balance" element={<CurrentBalance />} />
+        <Route path="/buy" element={<Buy />} />
+        <Route path="/promo-code" element={<PromoCode />} />
+        <Route path="/additional-income" element={<AdditionalIncome />} />
+        <Route path="/social-media" element={<SocialMedia />} />
       </Route>
     </Routes>
   );

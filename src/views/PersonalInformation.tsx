@@ -54,7 +54,7 @@ export default function PersonalInformation() {
         }}
       >
         <ItemContent>
-          <IconContainer>
+          <IconContainer sx={{ background: "var(--translucent-lilac)" }}>
             <Logout />
           </IconContainer>
           <Typography>Log out</Typography>
