@@ -1,30 +1,40 @@
 import { useState } from "react";
-import { TopicQuizzesContent } from "../models/TopicQuizzesContent";
 import { useNavigate } from "react-router-dom";
+import useCoursesViewModel from "./useCourses";
 
 export default function useTopicQuizzesViewModel() {
-  const [topicQuizzes] = useState(TopicQuizzesContent); // ESTO DEB CAMIAR Y CONSUMIR EL API
+  const { courses } = useCoursesViewModel(); // Obtiene los cursos
+  const [currentCourseIndex, setCurrentCourseIndex] = useState(0);
+  const [currentTopicIndex, setCurrentTopicIndex] = useState(0);
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [result, setResult] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const goToQuiz = (id: number) => navigate(`/quiz/${id}`);
+  // * Obtiene el Cuestionario específico por ID
+  const getQuizById = (id: number) => {
+    const currentCourse = courses[currentCourseIndex];
+    const currentTopic = currentCourse?.topics[currentTopicIndex];
 
-  // * Obtiene el Quiz específico por ID
-  const getQuizById = (id: number) =>
-    topicQuizzes.find((quiz) => quiz.id === id);
+    if (!currentTopic) return null; // Manejo de tema no existente
+    return currentTopic.quizzes.find((quiz) => quiz.id === id);
+  };
 
   // * Maneja la Respuesta selección y verifica si es correcta
   const selectOption = (selectedOptionLabel: string) => {
-    const currentQuiz = topicQuizzes[currentQuizIndex];
-    const currentQuestion = currentQuiz?.questions[currentQuestionIndex];
+    const currentCourse = courses[currentCourseIndex];
+    const currentTopic = currentCourse?.topics[currentTopicIndex];
+    const currentQuiz = currentTopic?.quizzes[currentQuizIndex];
+
+    if (!currentQuiz) return;
+    const currentQuestion = currentQuiz.question;
+
     if (!currentQuestion) return;
 
     setSelectedOption(selectedOptionLabel);
 
-    if (selectedOptionLabel === currentQuestion.correctAnswer) {
+    if (selectedOptionLabel === currentQuiz.correctAnswer) {
       setResult("correct");
     } else {
       setResult("incorrect");
@@ -33,13 +43,31 @@ export default function useTopicQuizzesViewModel() {
 
   // * Pasa al siguiente Cuestionario
   const nextQuiz = () => {
-    const currentQuiz = topicQuizzes[currentQuizIndex];
+    const currentCourse = courses[currentCourseIndex];
+    const currentTopic = currentCourse?.topics[currentTopicIndex];
+    const currentQuiz = currentTopic?.quizzes[currentQuizIndex];
+
+    if (!currentQuiz) return;
+
     if (currentQuestionIndex < currentQuiz.questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedOption(null);
       setResult(null);
-    } else if (currentQuizIndex < topicQuizzes.length - 1) {
+    } else if (currentQuizIndex < currentTopic.quizzes.length - 1) {
       setCurrentQuizIndex(currentQuizIndex + 1);
+      setCurrentQuestionIndex(0);
+      setSelectedOption(null);
+      setResult(null);
+    } else if (currentTopicIndex < currentCourse.topics.length - 1) {
+      setCurrentTopicIndex(currentTopicIndex + 1);
+      setCurrentQuizIndex(0);
+      setCurrentQuestionIndex(0);
+      setSelectedOption(null);
+      setResult(null);
+    } else if (currentCourseIndex < courses.length - 1) {
+      setCurrentCourseIndex(currentCourseIndex + 1);
+      setCurrentTopicIndex(0);
+      setCurrentQuizIndex(0);
       setCurrentQuestionIndex(0);
       setSelectedOption(null);
       setResult(null);
@@ -49,7 +77,9 @@ export default function useTopicQuizzesViewModel() {
   };
 
   return {
-    topicQuizzes,
+    courses,
+    currentCourseIndex,
+    currentTopicIndex,
     currentQuizIndex,
     currentQuestionIndex,
     selectedOption,
@@ -57,6 +87,5 @@ export default function useTopicQuizzesViewModel() {
     nextQuiz,
     getQuizById,
     selectOption,
-    goToQuiz,
   };
 }

@@ -18,33 +18,42 @@ import useTopicQuizzesViewModel from "../viewmodels/useTopicQuizzes";
 import { IQuiz, ITopic } from "../models/CoursesContent";
 
 export default function QuizDetail() {
-  const { id } = useParams<{ id: string }>();
+  const { id, courseId } = useParams<{ id: string; courseId: string }>();
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [quiz, setQuiz] = useState<IQuiz | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentTopic, setCurrentTopic] = useState<ITopic | null>(null);
+
   const { allTopics } = useTopicsViewModel();
   const { selectOption } = useTopicQuizzesViewModel();
 
   useEffect(() => {
     const findQuiz = () => {
-      if (id) {
+      console.log("ID del quiz:", id);
+      console.log("ID del curso:", courseId);
+      console.log("Temas disponibles:", allTopics);
+
+      if (id && courseId) {
         const quizData = allTopics
-          .flatMap((topic) => {
-            const quizzes = topic.quizzes;
-            const foundQuiz = quizzes.find((quiz) => quiz.id === Number(id));
-            if (foundQuiz) {
-              setCurrentTopic(topic);
-            }
-            return quizzes;
-          })
+          .filter((topic) => topic.id === Number(courseId))
+          .flatMap((topic) => topic.quizzes)
           .find((quiz) => quiz.id === Number(id));
-        setQuiz(quizData || null);
-        setCurrentQuestionIndex(0); // Reinicia el índice al cargar un nuevo quiz
+
+        if (quizData) {
+          setQuiz(quizData);
+          setCurrentTopic(
+            allTopics.find((topic) => topic.id === Number(courseId)) || null
+          );
+          setCurrentQuestionIndex(0);
+        } else {
+          console.log("Quiz no encontrado");
+        }
       }
     };
+
     findQuiz();
-  }, [id, allTopics]);
+  }, [id, courseId, allTopics]);
 
   // Manejar el caso en el que no se ha cargado el cuestionario o el tema
   if (!quiz || !currentTopic) {
@@ -86,10 +95,7 @@ export default function QuizDetail() {
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          <PageHeader
-            title={quiz.question} // Asegúrate de que se muestre el título correcto
-            other={`${currentQuestionIndex + 1}/${optionsCount}`} // Muestra la cantidad de opciones
-          />
+          <PageHeader title={quiz.question} other="cantidad de cuestionarios" />
           <Card
             sx={{
               position: "relative",

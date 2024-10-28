@@ -47,7 +47,7 @@ export default function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/courses/:courseId" element={<CourseDetail />} />
         <Route path="/courses/:courseId/topic/:id" element={<TopicDetail />} />
-        <Route path="/quiz/:id" element={<QuizDetail />} />
+        <Route path="/topic/:courseId/quiz/:id" element={<QuizDetail />} />
         <Route path="/quiz-completed" element={<QuizCompleted />} />
         <Route path="/current-balance" element={<CurrentBalance />} />
         <Route path="/buy" element={<Buy />} />

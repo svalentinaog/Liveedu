@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store";
 import { updateCoursesStateByKey } from "../models/slices/CoursesSlice";
 import { url_courses } from "../models/routes/router";
