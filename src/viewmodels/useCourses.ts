@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { RootState } from "../store";
 import { updateCoursesStateByKey } from "../models/slices/CoursesSlice";
-import { CoursesContent } from "../models/CoursesContent";
+import { url_courses } from "../models/routes/router";
+import { getCourses } from "../models/services/courses/getCourses";
 
 export default function useCoursesViewModel() {
   const dispatch = useDispatch();
@@ -14,16 +15,23 @@ export default function useCoursesViewModel() {
 
   // Inicializa los cursos si el estado está vacío
   useEffect(() => {
+    const fetchCourses = async () => {
+      const data = await getCourses(url_courses); // Llama a la API
+      if (data) {
+        dispatch(
+          updateCoursesStateByKey({ key: "courses", value: data }) // Actualiza el estado con los datos recibidos
+        );
+      }
+    };
+
     if (courses.length === 0) {
-      dispatch(
-        updateCoursesStateByKey({ key: "courses", value: CoursesContent })
-      );
+      fetchCourses(); // Llama a la función para obtener los cursos
     }
   }, [courses, dispatch]);
 
   // Fn para Ir al detalle del curso 📌
   const goToCourseDetail = (id: number) => {
-    navigate(`/course/${id}`);
+    navigate(`/courses/${id}`);
   };
 
   return {

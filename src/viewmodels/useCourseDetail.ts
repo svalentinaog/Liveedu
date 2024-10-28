@@ -7,13 +7,16 @@ export default function useCourseDetailViewModel() {
   const navigate = useNavigate();
 
   const course = courses.find(
-    (course) => course.id === parseInt(courseId || "", 10)
+    (course) => course.id == parseInt(courseId || "", 10)
   );
+
+  console.log(courses);
+
   const topic = course?.topics?.find((t) => t.id === parseInt(id || "", 10)); // Tema por id
 
-  // Ir a las lecciones del tema específico
+  // Ir a las lecciones del tema específico 🐥📌
   const goToLessonDetail = (courseId: number, topicId: number) => {
-    navigate(`/course/${courseId}/topic/${topicId}`);
+    navigate(`/courses/${courseId}/topic/${topicId}`);
   };
 
   return {
