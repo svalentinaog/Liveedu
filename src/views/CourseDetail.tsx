@@ -3,7 +3,12 @@ import useCourseDetailViewModel from "../viewmodels/useCourseDetail";
 import { AccessTime, MenuBook, PlayCircleOutline } from "@mui/icons-material";
 import HistoryBack from "../components/HistoryBack";
 import TopicsToStudy from "./TopicsToStudy";
-import { btnNextMobileNone, MainButton, NextButton } from "../styles/mui";
+import {
+  btnNextMobileNone,
+  GoBack,
+  MainButton,
+  NextButton,
+} from "../styles/mui";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function CourseDetail() {
@@ -42,16 +47,9 @@ export default function CourseDetail() {
             gap: 2,
           }}
         >
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "start",
-              alignItems: "start",
-            }}
-          >
+          <GoBack>
             <HistoryBack />
-          </Box>
+          </GoBack>
           <Card
             sx={{
               width: "100%",

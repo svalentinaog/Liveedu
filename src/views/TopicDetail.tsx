@@ -1,18 +1,27 @@
 import { IconButton, Typography, Card, Box } from "@mui/material";
-import HistoryBack from "../components/HistoryBack";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { GoBack } from "../styles/mui";
+import HistoryBack from "../components/HistoryBack";
 import Lessons from "./Lessons";
 import useCourseDetailViewModel from "../viewmodels/useCourseDetail";
-import { useState } from "react";
+import useVideo from "../viewmodels/useVideo";
 
 export default function TopicDetail() {
   const { topic } = useCourseDetailViewModel();
-  const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleTogglePlay = () => {
-    setIsPlaying((prev) => !prev);
-  };
+  const {
+    isPlaying,
+    videoUrl,
+    handleTogglePlay,
+    handleLessonSelect,
+    selectedLessonIndex,
+  } = useVideo(topic?.lessons || [], 0);
+
+  if (!topic) {
+    return <Typography>Cargando...</Typography>;
+  }
+
   return (
     <Box
       sx={{
@@ -25,23 +34,10 @@ export default function TopicDetail() {
         marginBottom: { xs: 8, md: 2 },
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 2,
-        }}
-      >
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "start",
-            alignItems: "start",
-          }}
-        >
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+        <GoBack>
           <HistoryBack />
-        </Box>
+        </GoBack>
 
         <Box>
           <Card
@@ -61,21 +57,41 @@ export default function TopicDetail() {
               sx={{
                 width: "100%",
                 height: { xs: "250px", md: "500px" },
-
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                position: "relative",
+                overflow: "hidden",
               }}
             >
-              <img
-                alt="Course Watch"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
+              {isPlaying ? (
+                <iframe
+                  src={videoUrl + "?autoplay=1"}
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title="video"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                />
+              ) : (
+                <img
+                  alt="Watch"
+                  src="https://img.youtube.com/vi/a7eznAouNak/maxresdefault.jpg"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              )}
             </Box>
+
             <IconButton
               onClick={handleTogglePlay}
               sx={{
@@ -90,25 +106,9 @@ export default function TopicDetail() {
             >
               {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
             </IconButton>
-            <Box
-              sx={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                display: "flex",
-                justifyContent: "space-between",
-                px: 2,
-                py: 0.5,
-                bgcolor: "rgba(0, 0, 0, 0.3)",
-                color: "white",
-              }}
-            >
-              <Typography variant="body2">00:00</Typography>
-              <Typography variant="body2">{topic?.duration}</Typography>
-            </Box>
           </Card>
         </Box>
+
         <Box>
           <Typography
             sx={{
@@ -128,7 +128,13 @@ export default function TopicDetail() {
           </Typography>
         </Box>
       </Box>
-      <Lessons lessons={topic?.lessons || []} />
+
+      <Lessons
+        lessons={topic.lessons}
+        onLessonSelect={handleLessonSelect}
+        playingLessonIndex={selectedLessonIndex}
+        isPlaying={isPlaying}
+      />
     </Box>
   );
 }

@@ -1,19 +1,20 @@
 import { Box } from "@mui/material";
 import { ILesson } from "../models/CoursesContent";
 import LessonCard from "../components/LessonCard";
-import { useState } from "react";
 
 interface ILessonsProps {
   lessons: ILesson[];
+  onLessonSelect: (index: number) => void;
+  playingLessonIndex: number; // Agregar esta línea
+  isPlaying: boolean;
 }
 
-export default function Lessons({ lessons }: ILessonsProps) {
-  const [playingLessonId, setPlayingLessonId] = useState<number | null>(null);
-
-  const handleLessonClick = (id: number) => {
-    setPlayingLessonId((prev) => (prev === id ? null : id));
-  };
-
+export default function Lessons({
+  lessons,
+  onLessonSelect,
+  playingLessonIndex,
+  isPlaying,
+}: ILessonsProps) {
   return (
     <Box
       sx={{
@@ -23,12 +24,12 @@ export default function Lessons({ lessons }: ILessonsProps) {
         gap: 1.5,
       }}
     >
-      {lessons.map((lesson) => (
+      {lessons.map((lesson, index) => (
         <LessonCard
           key={lesson.id}
           lesson={lesson}
-          isPlaying={playingLessonId === lesson.id}
-          onClick={handleLessonClick}
+          isPlaying={playingLessonIndex === index && isPlaying}
+          onClick={() => onLessonSelect(index)}
         />
       ))}
     </Box>

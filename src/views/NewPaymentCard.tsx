@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import { CustomForm, FormActions, MainButton } from "../styles/mui";
+import { CustomForm, FormActions, GoBack, MainButton } from "../styles/mui";
 
 import useUserAuthentication from "../viewmodels/useUserAuthentication"; // custom hook
 import CustomPassField from "../components/CustomPassField";
@@ -28,16 +28,9 @@ export default function NewPaymentCard() {
           gap: 2,
         }}
       >
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "start",
-            alignItems: "start",
-          }}
-        >
+        <GoBack>
           <HistoryBack />
-        </Box>
+        </GoBack>
 
         <Box
           sx={{

@@ -11,7 +11,7 @@ export default function PageHeader({ title, other }: PageHeaderProps) {
   return (
     <Head>
       <HeadContent>
-        <GoBack>
+        <GoBack sx={{ flex: 1 }}>
           <HistoryBack />
         </GoBack>
         <PageTitle>

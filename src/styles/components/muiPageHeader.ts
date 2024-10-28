@@ -24,7 +24,6 @@ export const GoBack = styled(Box)`
   display: flex;
   justify-content: start;
   align-items: start;
-  flex: 1;
 `;
 
 export const PageTitle = styled(Typography)`
