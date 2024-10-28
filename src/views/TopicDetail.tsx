@@ -82,7 +82,7 @@ export default function TopicDetail() {
               ) : (
                 <img
                   alt="Watch"
-                  src="https://img.youtube.com/vi/a7eznAouNak/maxresdefault.jpg"
+                  src="https://cronicasfreelancer.com/wp-content/uploads/2024/03/saturacion.jpg"
                   style={{
                     width: "100%",
                     height: "100%",

@@ -51,24 +51,4 @@ export const TopicQuizzesContent: ITopicQuizzesContent[] = [
       },
     ],
   },
-  {
-    id: 2,
-    title: "Bulletin board",
-    description: "Shopping conversation topic near bulletin board",
-    image: "/svg/topics/2.svg",
-    duration: 40,
-    questions: [
-      {
-        id: 1,
-        question: "What can you find on a bulletin board?",
-        options: {
-          a: "Posters",
-          b: "Food items",
-          c: "Furniture",
-          d: "Clothes",
-        },
-        correctAnswer: "a",
-      },
-    ],
-  },
 ];

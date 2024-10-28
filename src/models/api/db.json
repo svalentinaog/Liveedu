@@ -1,0 +1,1003 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Valentina Ortiz",
+      "email": "svalentinaog10@gmail.com",
+      "password": "valen123",
+      "phone": "3187399367",
+      "verificationCode": "123456",
+      "verified": true
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "starPoints": 5.5,
+      "image": "/svg/course1.svg",
+      "title": "Programación Básica",
+      "subtitle": "Domina los fundamentos esenciales para convertirte en programador desde cero",
+      "description": "Este curso de Programación Básica está diseñado para principiantes que desean aprender desde cero. Los estudiantes aprenderán conceptos fundamentales de programación, desarrollar habilidades prácticas, y construir una base sólida en el desarrollo de software.",
+      "price": 520,
+      "duration": "400 hours",
+      "videoCount": 20,
+      "topicsCount": 5,
+      "topics": [
+        {
+          "id": 1,
+          "title": "Introducción a la Programación",
+          "description": "Conceptos básicos sobre programación y herramientas necesarias.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "¿Qué es la Programación?",
+              "description": "Introducción al mundo de la programación: historia y usos.",
+              "video": "https://www.youtube.com/embed/a7eznAouNak"
+            },
+            {
+              "id": 2,
+              "title": "Lenguajes de Programación",
+              "description": "Exploración de lenguajes de programación populares y aplicaciones.",
+              "video": "https://www.youtube.com/embed/gFMMmi-EYEM"
+            },
+            {
+              "id": 3,
+              "title": "Instalación del Entorno de Desarrollo",
+              "description": "Configuración del entorno y elección de un editor de código.",
+              "video": "https://www.youtube.com/embed/vy8HqYpWtPg"
+            },
+            {
+              "id": 4,
+              "title": "Primer Programa",
+              "description": "Escribir y ejecutar el primer programa 'Hola Mundo'.",
+              "video": "https://www.youtube.com/embed/8ClovCpjc5U"
+            },
+            {
+              "id": 5,
+              "title": "Resolución de Problemas y Algoritmos",
+              "description": "Introducción a la lógica algorítmica.",
+              "video": "https://www.youtube.com/embed/sQLn2asTefo"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es la programación?",
+              "options": {
+                "a": "Una forma de diseñar interfaces",
+                "b": "Escribir instrucciones para que una computadora realice tareas",
+                "c": "Crear hardware",
+                "d": "Un tipo de sistema operativo"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 2,
+              "question": "¿Cuál es el primer programa tradicionalmente escrito?",
+              "options": {
+                "a": "Hola Mundo",
+                "b": "Inicio del Programa",
+                "c": "Bienvenido",
+                "d": "Primer Proyecto"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 3,
+              "question": "¿Cuál es el propósito de un entorno de desarrollo?",
+              "options": {
+                "a": "Editar código de forma organizada",
+                "b": "Crear hardware",
+                "c": "Generar gráficos",
+                "d": "Controlar errores"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 4,
+              "question": "¿Qué lenguaje es conocido como el lenguaje de la web?",
+              "options": {
+                "a": "JavaScript",
+                "b": "Python",
+                "c": "C++",
+                "d": "Java"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 5,
+              "question": "¿Qué es un algoritmo?",
+              "options": {
+                "a": "Una serie de instrucciones para resolver un problema",
+                "b": "Un tipo de dato en programación",
+                "c": "Un lenguaje de programación",
+                "d": "Un hardware de computadora"
+              },
+              "correctAnswer": "a"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Conceptos Básicos de Programación",
+          "description": "Aprender a trabajar con variables, operadores y depuración.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Variables y Tipos de Datos",
+              "description": "Tipos de datos y cómo definir variables en un programa.",
+              "video": "https://www.youtube.com/embed/_lNtSsEcnwc"
+            },
+            {
+              "id": 2,
+              "title": "Operadores y Expresiones",
+              "description": "Uso de operadores aritméticos, lógicos y de comparación.",
+              "video": "https://www.youtube.com/embed/YNoBAnrEScI"
+            },
+            {
+              "id": 3,
+              "title": "Entrada y Salida de Datos",
+              "description": "Interacción con el usuario y recepción de datos.",
+              "video": "https://www.youtube.com/embed/xfDw-4jAflQ"
+            },
+            {
+              "id": 4,
+              "title": "Comentarios y Buenas Prácticas",
+              "description": "Documentación de código y uso de comentarios.",
+              "video": "https://www.youtube.com/embed/zoq1Yoqmbe4"
+            },
+            {
+              "id": 5,
+              "title": "Errores y Depuración",
+              "description": "Cómo identificar y corregir errores en el código.",
+              "video": "https://www.youtube.com/embed/BPWpialFWvM"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es una variable en programación?",
+              "options": {
+                "a": "Un número constante",
+                "b": "Una estructura de datos",
+                "c": "Un espacio para almacenar valores",
+                "d": "Un tipo de operador"
+              },
+              "correctAnswer": "c"
+            },
+            {
+              "id": 2,
+              "question": "¿Qué tipo de operador permite sumar números?",
+              "options": {
+                "a": "Operador lógico",
+                "b": "Operador aritmético",
+                "c": "Operador de comparación",
+                "d": "Operador de asignación"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 3,
+              "question": "¿Cuál de estos es un tipo de dato?",
+              "options": {
+                "a": "String",
+                "b": "Loop",
+                "c": "Function",
+                "d": "Statement"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 4,
+              "question": "¿Para qué sirve un comentario en el código?",
+              "options": {
+                "a": "Para evitar errores",
+                "b": "Para documentar y explicar el código",
+                "c": "Para ejecutar el código",
+                "d": "Para declarar variables"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 5,
+              "question": "¿Qué es la depuración?",
+              "options": {
+                "a": "Comentar el código",
+                "b": "Eliminar errores en el código",
+                "c": "Compilar el código",
+                "d": "Crear nuevas variables"
+              },
+              "correctAnswer": "b"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Estructuras de Control de Flujo",
+          "description": "Aplicación de condicionales y bucles en programación.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Condicionales: IF, ELSE y SWITCH",
+              "description": "Uso de condicionales para control de decisiones.",
+              "video": ""
+            },
+            {
+              "id": 2,
+              "title": "Bucles: FOR y WHILE",
+              "description": "Repetición de tareas con bucles.",
+              "video": ""
+            },
+            {
+              "id": 3,
+              "title": "Control de Flujo Avanzado",
+              "description": "Uso de palabras clave como `break` y `continue`.",
+              "video": ""
+            },
+            {
+              "id": 4,
+              "title": "Ejercicios de Control de Flujo",
+              "description": "Práctica con ejercicios de flujo de control.",
+              "video": ""
+            },
+            {
+              "id": 5,
+              "title": "Aplicación Práctica",
+              "description": "Desarrollo de un programa aplicando el flujo de control.",
+              "video": ""
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué estructura se usa para tomar decisiones en el código?",
+              "options": {
+                "a": "Condicionales",
+                "b": "Bucles",
+                "c": "Variables",
+                "d": "Funciones"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 2,
+              "question": "¿Cuál es el propósito de un bucle?",
+              "options": {
+                "a": "Detener el flujo del programa",
+                "b": "Ejecutar un bloque de código varias veces",
+                "c": "Definir variables",
+                "d": "Optimizar el código"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 3,
+              "question": "¿Qué palabra clave se usa para detener un bucle?",
+              "options": {
+                "a": "break",
+                "b": "continue",
+                "c": "stop",
+                "d": "halt"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 4,
+              "question": "¿Cuál de estos es un tipo de bucle?",
+              "options": {
+                "a": "For",
+                "b": "Variable",
+                "c": "Función",
+                "d": "Condicional"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 5,
+              "question": "¿Qué se usa para realizar comparaciones en condicionales?",
+              "options": {
+                "a": "Operadores de comparación",
+                "b": "Variables",
+                "c": "Comentarios",
+                "d": "Funciones"
+              },
+              "correctAnswer": "a"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Funciones y Modularidad",
+          "description": "Aprende sobre funciones, modularización y alcance de variables.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Introducción a Funciones",
+              "description": "Qué son las funciones y cómo se estructuran.",
+              "video": "https://www.youtube.com/embed/MiH3pbP4EFc"
+            },
+            {
+              "id": 2,
+              "title": "Creación de Funciones",
+              "description": "Cómo crear funciones y usar parámetros.",
+              "video": "https://www.youtube.com/embed/e3EyqGnb6XM&t=23s"
+            },
+            {
+              "id": 3,
+              "title": "Alcance de las Variables",
+              "description": "Entender el alcance de variables en funciones.",
+              "video": "https://www.youtube.com/embed/noTEo898-Ks"
+            },
+            {
+              "id": 4,
+              "title": "Funciones Integradas y Librerías",
+              "description": "Uso de funciones predefinidas y librerías.",
+              "video": "https://www.youtube.com/embed/V4ZxnSYly-Y"
+            },
+            {
+              "id": 5,
+              "title": "Ejercicio de Modularización",
+              "description": "Dividir un programa en funciones y módulos.",
+              "video": "https://www.youtube.com/embed/zBIG4D8KhWc"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es una función?",
+              "options": {
+                "a": "Un tipo de dato",
+                "b": "Una secuencia de comandos",
+                "c": "Un bloque de código que realiza una tarea",
+                "d": "Un operador lógico"
+              },
+              "correctAnswer": "c"
+            },
+            {
+              "id": 2,
+              "question": "¿Qué es un parámetro en una función?",
+              "options": {
+                "a": "Una variable que almacena datos",
+                "b": "Un valor pasado a una función",
+                "c": "Una condición en un bucle",
+                "d": "Un tipo de error"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 3,
+              "question": "¿Qué es el alcance de una variable?",
+              "options": {
+                "a": "El valor de la variable",
+                "b": "La duración de la variable",
+                "c": "La visibilidad de la variable en el programa",
+                "d": "El tipo de la variable"
+              },
+              "correctAnswer": "c"
+            },
+            {
+              "id": 4,
+              "question": "¿Qué permite la modularización?",
+              "options": {
+                "a": "Simplificar y organizar el código",
+                "b": "Crear variables globales",
+                "c": "Eliminar comentarios",
+                "d": "Ejecutar el código más rápido"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 5,
+              "question": "¿Qué son las librerías en programación?",
+              "options": {
+                "a": "Funciones predefinidas agrupadas",
+                "b": "Comentarios de código",
+                "c": "Variables globales",
+                "d": "Operadores matemáticos"
+              },
+              "correctAnswer": "a"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Estructuras de Datos Básicas",
+          "description": "Uso de listas, diccionarios, conjuntos y más.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Listas y Arreglos",
+              "description": "Cómo crear y manipular listas o arreglos.",
+              "video": "https://www.youtube.com/embed/_FsRvYZNbnc"
+            },
+            {
+              "id": 2,
+              "title": "Diccionarios y Mapas",
+              "description": "Almacenamiento de pares de clave-valor.",
+              "video": "https://www.youtube.com/embed/nkGEPGI8020"
+            },
+            {
+              "id": 3,
+              "title": "Conjuntos y Tuplas",
+              "description": "Estructuras de datos para programación eficiente.",
+              "video": "https://www.youtube.com/embed/vImkxi6wCN0"
+            },
+            {
+              "id": 4,
+              "title": "Operaciones con Estructuras de Datos",
+              "description": "Manipulación de estructuras de datos comunes.",
+              "video": "https://www.youtube.com/embed/5Y7T6ubaq04"
+            },
+            {
+              "id": 5,
+              "title": "Ejercicio Integrado",
+              "description": "Desarrollar un programa que combine estructuras de datos.",
+              "video": "https://www.youtube.com/embed/Df-sgxGzyTg"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es una lista en programación?",
+              "options": {
+                "a": "Un tipo de bucle",
+                "b": "Un conjunto de datos ordenado",
+                "c": "Un condicional",
+                "d": "Una función matemática"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 2,
+              "question": "¿Qué estructura se usa para pares clave-valor?",
+              "options": {
+                "a": "Lista",
+                "b": "Diccionario",
+                "c": "Conjunto",
+                "d": "Tupla"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 3,
+              "question": "¿Qué es una tupla?",
+              "options": {
+                "a": "Un conjunto de datos inmutable",
+                "b": "Una estructura de datos mutable",
+                "c": "Un bucle",
+                "d": "Una función"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 4,
+              "question": "¿Cuál es una característica de un conjunto?",
+              "options": {
+                "a": "Permite duplicados",
+                "b": "Es mutable",
+                "c": "No permite duplicados",
+                "d": "Es un bucle"
+              },
+              "correctAnswer": "c"
+            },
+            {
+              "id": 5,
+              "question": "¿Qué función se usa para agregar un elemento a una lista?",
+              "options": {
+                "a": "add",
+                "b": "append",
+                "c": "insert",
+                "d": "push"
+              },
+              "correctAnswer": "b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "starPoints": 4.9,
+      "image": "/svg/course2.svg",
+      "title": "Programación Avanzada",
+      "subtitle": "Desarrolla habilidades avanzadas y lleva tu código al siguiente nivel",
+      "description": "Este curso de Programación Avanzada está diseñado para aquellos que ya dominan los fundamentos y buscan profundizar en técnicas y conceptos avanzados de desarrollo de software.",
+      "price": 1250,
+      "duration": "200 hours",
+      "videoCount": 20,
+      "topicsCount": 5,
+      "topics": [
+        {
+          "id": 1,
+          "title": "Programación Orientada a Objetos (POO) Avanzada",
+          "description": "Conceptos avanzados de POO, incluyendo herencia y polimorfismo.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Revisión de Conceptos de POO",
+              "description": "Repaso de conceptos básicos de POO.",
+              "video": "https://www.youtube.com/embed/I848HdWjLMo"
+            },
+            {
+              "id": 2,
+              "title": "Herencia",
+              "description": "Lógica de herencia.",
+              "video": "https://www.youtube.com/embed/bblFTvuk4pY"
+            },
+            {
+              "id": 3,
+              "title": "Polimorfismo",
+              "description": "Lógica del polimorfismo.",
+              "video": "https://www.youtube.com/embed/bblFTvuk4pY"
+            },
+            {
+              "id": 4,
+              "title": "Encapsulación",
+              "description": "Lógica de encapsulamiento.",
+              "video": "https://www.youtube.com/embed/8aQSD36paWU&t=345s"
+            },
+            {
+              "id": 5,
+              "title": "Interfaces y Clases Abstractas",
+              "description": "Implementación de interfaces y clases abstractas.",
+              "video": "https://www.youtube.com/embed/Bj2ta9xv4cM"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es la herencia en POO?",
+              "options": {
+                "a": "Un proceso para ordenar código",
+                "b": "Un mecanismo para crear una nueva clase a partir de una existente",
+                "c": "Una forma de escribir código",
+                "d": "Una técnica para mejorar la velocidad de ejecución"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 2,
+              "question": "¿Qué permite el polimorfismo?",
+              "options": {
+                "a": "Usar múltiples clases en un solo archivo",
+                "b": "Crear nuevas instancias rápidamente",
+                "c": "Usar la misma interfaz para diferentes tipos de datos",
+                "d": "Eliminar datos redundantes"
+              },
+              "correctAnswer": "c"
+            },
+            {
+              "id": 3,
+              "question": "¿Qué es una clase abstracta?",
+              "options": {
+                "a": "Una clase que permite instanciación directa",
+                "b": "Una clase que solo puede ser heredada, no instanciada",
+                "c": "Una función dentro de una clase",
+                "d": "Una técnica de ordenación de datos"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 4,
+              "question": "¿Para qué se usa la encapsulación?",
+              "options": {
+                "a": "Para mejorar la eficiencia",
+                "b": "Para ocultar los detalles internos de una clase",
+                "c": "Para ordenar el código en una lista",
+                "d": "Para acelerar la ejecución"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 5,
+              "question": "¿Qué es una interfaz en POO?",
+              "options": {
+                "a": "Una forma de encapsulación",
+                "b": "Un tipo de herencia",
+                "c": "Un contrato que una clase debe seguir",
+                "d": "Un método de ordenamiento"
+              },
+              "correctAnswer": "c"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Programación Funcional",
+          "description": "Conceptos clave y uso de la programación funcional.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Introducción a la Programación Funcional",
+              "description": "Comparación entre POO y programación funcional.",
+              "video": "https://www.youtube.com/embed/EsspMNzCLMk"
+            },
+            {
+              "id": 2,
+              "title": "Funciones de Orden Superior",
+              "description": "Uso de `map`, `filter` y `reduce`.",
+              "video": "https://www.youtube.com/embed/tP8JiVUiyDo"
+            },
+            {
+              "id": 3,
+              "title": "Closures y Funciones Lambda",
+              "description": "Comprensión de closures y lambdas.",
+              "video": "https://www.youtube.com/embed/xa8lhVwQBw4"
+            },
+            {
+              "id": 4,
+              "title": "Inmutabilidad y Efectos Secundarios",
+              "description": "Principios de inmutabilidad en código.",
+              "video": "https://www.youtube.com/embed/Ga3XXNAIPt0"
+            },
+            {
+              "id": 5,
+              "title": "Ejercicio Práctico",
+              "description": "Desarrollar una app usando programación funcional.",
+              "video": "https://www.youtube.com/embed/JsDiFHT99fM"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es inmutabilidad?",
+              "options": {
+                "a": "La capacidad de modificar un valor",
+                "b": "La imposibilidad de cambiar un valor",
+                "c": "Un tipo de error",
+                "d": "Una técnica de ordenación"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 2,
+              "question": "¿Qué hace la función `map`?",
+              "options": {
+                "a": "Filtra elementos en una lista",
+                "b": "Reduce una lista a un solo valor",
+                "c": "Transforma cada elemento en una lista",
+                "d": "Agrega elementos a una lista"
+              },
+              "correctAnswer": "c"
+            },
+            {
+              "id": 3,
+              "question": "¿Qué es una lambda?",
+              "options": {
+                "a": "Una función con nombre",
+                "b": "Una función anónima y breve",
+                "c": "Una variable global",
+                "d": "Una técnica de depuración"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 4,
+              "question": "¿Qué caracteriza a la programación funcional?",
+              "options": {
+                "a": "El uso de variables globales",
+                "b": "El enfoque en funciones y ausencia de efectos secundarios",
+                "c": "La creación de múltiples clases",
+                "d": "El uso extensivo de operadores lógicos"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 5,
+              "question": "¿Cuál es el propósito de la función `filter`?",
+              "options": {
+                "a": "Crear una copia de una lista",
+                "b": "Filtrar elementos que cumplen una condición",
+                "c": "Sumar elementos en una lista",
+                "d": "Modificar elementos en una lista"
+              },
+              "correctAnswer": "b"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Estructuras de Datos y Algoritmos Avanzados",
+          "description": "Implementación y uso de estructuras y algoritmos avanzados.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Listas Enlazadas",
+              "description": "Cómo implementar listas.",
+              "video": "https://www.youtube.com/embed/qk67wS7WYxo"
+            },
+            {
+              "id": 2,
+              "title": "Árboles Binarios",
+              "description": "Cómo implementar \u00e1rboles.",
+              "video": "https://www.youtube.com/embed/tBaOQeyXYqg"
+            },
+            {
+              "id": 3,
+              "title": "Algoritmos de Búsqueda y Ordenamiento",
+              "description": "B\u00fasqueda binaria, quicksort y mergesort.",
+              "video": "https://www.youtube.com/embed/79I-zJsrp4Q"
+            },
+            {
+              "id": 4,
+              "title": "Grafos y Algoritmos de Camino Corto",
+              "description": "Exploración de grafos con Dijkstra.",
+              "video": "https://www.youtube.com/embed/gq3cTlBMJhs"
+            },
+            {
+              "id": 5,
+              "title": "Recursividad",
+              "description": "La magia de la recursividad.",
+              "video": "https://www.youtube.com/embed/yX5kR63Dpdw"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es una lista enlazada?",
+              "options": {
+                "a": "Una lista de elementos en un solo arreglo",
+                "b": "Una estructura donde cada elemento apunta al siguiente",
+                "c": "Una lista que solo puede contener números",
+                "d": "Un tipo de función"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 2,
+              "question": "¿Cuál es la principal característica de un árbol binario?",
+              "options": {
+                "a": "Cada nodo tiene al menos tres hijos",
+                "b": "Cada nodo tiene como máximo dos hijos",
+                "c": "Cada nodo apunta a una lista",
+                "d": "No tiene una raíz"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 3,
+              "question": "¿Qué es la búsqueda binaria?",
+              "options": {
+                "a": "Un algoritmo de ordenación",
+                "b": "Un algoritmo para encontrar un elemento en una lista ordenada",
+                "c": "Un método para duplicar una lista",
+                "d": "Un tipo de lista enlazada"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 4,
+              "question": "¿Qué hace el algoritmo de Dijkstra?",
+              "options": {
+                "a": "Ordena elementos en una lista",
+                "b": "Encuentra el camino más corto en un grafo",
+                "c": "Crea listas enlazadas",
+                "d": "Calcula el tamaño de una lista"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 5,
+              "question": "¿Qué es la recursividad?",
+              "options": {
+                "a": "Un proceso donde una función se llama a sí misma",
+                "b": "Una estructura de datos",
+                "c": "Un tipo de bucle",
+                "d": "Un operador matemático"
+              },
+              "correctAnswer": "a"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Manejo de Excepciones y Depuración",
+          "description": "Control de flujo con excepciones y técnicas de depuración.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Conceptos de Manejo de Excepciones",
+              "description": "Diferencias entre errores y excepciones.",
+              "video": "https://www.youtube.com/embed/njd0bZiQDm0"
+            },
+            {
+              "id": 2,
+              "title": "Excepciones Personalizadas",
+              "description": "Creación de excepciones propias.",
+              "video": "https://www.youtube.com/embed/B6h6pIcj0WA"
+            },
+            {
+              "id": 3,
+              "title": "Herramientas de Depuración",
+              "description": "Uso de herramientas de depuración.",
+              "video": "https://www.youtube.com/embed/p-9peljl1u8"
+            },
+            {
+              "id": 4,
+              "title": "Errores en Funciones Asíncronas",
+              "description": "Errores en funciones asíncronas.",
+              "video": "https://www.youtube.com/embed/Jmmtd7ive_w"
+            },
+            {
+              "id": 5,
+              "title": "Funciones Asíncronas",
+              "description": "¿Cómo funcionan las Promises y Async/Await?.",
+              "video": "https://www.youtube.com/embed/rKK1q7nFt7M"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es una excepción?",
+              "options": {
+                "a": "Un error no controlado",
+                "b": "Una señal de error que puede controlarse",
+                "c": "Un tipo de variable",
+                "d": "Un comentario en el código"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 2,
+              "question": "¿Qué hace una excepción personalizada?",
+              "options": {
+                "a": "Crea una función anónima",
+                "b": "Permite definir errores específicos",
+                "c": "Elimina errores en el código",
+                "d": "Es una herramienta de depuración"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 3,
+              "question": "¿Para qué se usa `try` en Python?",
+              "options": {
+                "a": "Para crear una variable",
+                "b": "Para intentar ejecutar un bloque de código que puede fallar",
+                "c": "Para iniciar un bucle",
+                "d": "Para ordenar elementos en una lista"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 4,
+              "question": "¿Qué es la depuración?",
+              "options": {
+                "a": "Un proceso de eliminación de errores",
+                "b": "Un bucle infinito",
+                "c": "Una función de Python",
+                "d": "Un método de ordenación"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 5,
+              "question": "¿Qué es una función asíncrona?",
+              "options": {
+                "a": "Una función que se ejecuta al mismo tiempo que otras",
+                "b": "Una función que espera hasta que todas las demás hayan terminado",
+                "c": "Una función que ejecuta un bucle for",
+                "d": "Una función que es más rápida que otras"
+              },
+              "correctAnswer": "a"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Patrones de Diseño",
+          "description": "Aplicación de patrones de diseño en desarrollo de software.",
+          "image": "/svg/topics/1.svg",
+          "duration": 80,
+          "lessons": [
+            {
+              "id": 1,
+              "title": "Introducción a Patrones de Diseño",
+              "description": "Qué son y cómo benefician el desarrollo.",
+              "video": "https://www.youtube.com/embed/1QUhp7QIWv0"
+            },
+            {
+              "id": 2,
+              "title": "Patrón Singleton",
+              "description": "Patrones creacionales en proyectos.",
+              "video": "https://www.youtube.com/embed/Z7Z-PJEIEsc"
+            },
+            {
+              "id": 3,
+              "title": "Patrón Factory",
+              "description": "Patrones creacionales en proyectos.",
+              "video": "https://www.youtube.com/embed/lLvYAzXO7Ek"
+            },
+            {
+              "id": 4,
+              "title": "Patrón Observador",
+              "description": "Aplicación de patrones estructurales.",
+              "video": "https://www.youtube.com/embed/HFkZb1g8faA"
+            },
+            {
+              "id": 5,
+              "title": "Patrón MVC, MVP y MVVM",
+              "description": "Organización de aplicaciones con estos patrones.",
+              "video": "https://www.youtube.com/embed/S3h-u4M1q3w"
+            }
+          ],
+          "quizzes": [
+            {
+              "id": 1,
+              "question": "¿Qué es un patrón de diseño?",
+              "options": {
+                "a": "Un algoritmo de ordenamiento",
+                "b": "Una solución reusable a problemas comunes de diseño",
+                "c": "Una estructura de datos",
+                "d": "Una forma de decorar código"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 2,
+              "question": "¿Para qué sirve el patrón Singleton?",
+              "options": {
+                "a": "Para permitir múltiples instancias de una clase",
+                "b": "Para restringir una clase a una única instancia",
+                "c": "Para ordenar elementos en una lista",
+                "d": "Para acelerar el procesamiento"
+              },
+              "correctAnswer": "b"
+            },
+            {
+              "id": 3,
+              "question": "¿Qué hace el patrón Factory?",
+              "options": {
+                "a": "Crea instancias de una clase basada en condiciones",
+                "b": "Elimina instancias de una clase",
+                "c": "Duplica una instancia",
+                "d": "Organiza el código en carpetas"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 4,
+              "question": "¿Cuál es la característica principal del patrón Observador?",
+              "options": {
+                "a": "Permite a una clase observar otra en tiempo real",
+                "b": "Hace el código más eficiente",
+                "c": "Evita el uso de variables globales",
+                "d": "Especifica una estructura para el código"
+              },
+              "correctAnswer": "a"
+            },
+            {
+              "id": 5,
+              "question": "¿Cuál es la finalidad del patrón MVC?",
+              "options": {
+                "a": "Organizar una aplicación en tres componentes separados",
+                "b": "Simplificar los algoritmos",
+                "c": "Evitar el uso de clases",
+                "d": "Hacer más rápida la ejecución del código"
+              },
+              "correctAnswer": "a"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
