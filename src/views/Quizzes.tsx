@@ -26,6 +26,7 @@ export default function Quizzes() {
           padding: { xs: "0 20px 0 20px", md: 0 },
         }}
       >
+        {/* Listado de Temas con Custionarios para Resolver */}
         <TopicQuizzes />
       </Box>
     </Box>

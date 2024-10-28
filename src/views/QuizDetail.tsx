@@ -11,37 +11,65 @@ import {
 import { btnNextMobileNone, MainButton, NextButton } from "../styles/mui";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ITopicQuizzesContent } from "../models/TopicQuizzesContent";
 import Quiz from "../components/Quiz";
-import useTopicQuizzesViewModel from "../viewmodels/useTopicQuizzes";
 import PageHeader from "../components/PageHeader";
+import useTopicsViewModel from "../viewmodels/useTopics";
+import useTopicQuizzesViewModel from "../viewmodels/useTopicQuizzes";
+import { IQuiz, ITopic } from "../models/CoursesContent";
 
 export default function QuizDetail() {
   const { id } = useParams<{ id: string }>();
   const [isPlaying, setIsPlaying] = useState(false);
-  const [quiz, setQuiz] = useState<ITopicQuizzesContent | null>(null);
-  const {
-    getQuizById,
-    currentQuizIndex,
-    currentQuestionIndex,
-    nextQuiz,
-    selectOption,
-  } = useTopicQuizzesViewModel();
+  const [quiz, setQuiz] = useState<IQuiz | null>(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentTopic, setCurrentTopic] = useState<ITopic | null>(null);
+  const { allTopics } = useTopicsViewModel();
+  const { selectOption } = useTopicQuizzesViewModel();
 
   useEffect(() => {
-    if (id) {
-      const quizData = getQuizById(Number(id));
-      setQuiz(quizData || null);
-    }
-  }, [id, getQuizById]);
+    const findQuiz = () => {
+      if (id) {
+        const quizData = allTopics
+          .flatMap((topic) => {
+            const quizzes = topic.quizzes;
+            const foundQuiz = quizzes.find((quiz) => quiz.id === Number(id));
+            if (foundQuiz) {
+              setCurrentTopic(topic);
+            }
+            return quizzes;
+          })
+          .find((quiz) => quiz.id === Number(id));
+        setQuiz(quizData || null);
+        setCurrentQuestionIndex(0); // Reinicia el índice al cargar un nuevo quiz
+      }
+    };
+    findQuiz();
+  }, [id, allTopics]);
 
-  if (!quiz) return <Typography>Loading quiz...</Typography>;
+  // Manejar el caso en el que no se ha cargado el cuestionario o el tema
+  if (!quiz || !currentTopic) {
+    return <Typography>Loading quiz...</Typography>;
+  }
 
-  const progress = ((currentQuestionIndex + 1) / quiz.questions.length) * 100;
-  const currentQuestion = quiz.questions[currentQuestionIndex];
+  const optionsCount = Object.keys(quiz.options).length;
+  const progress = ((currentQuestionIndex + 1) / optionsCount) * 100;
 
   const handleTogglePlay = () => {
     setIsPlaying((prev) => !prev);
+  };
+
+  const handleNextQuiz = () => {
+    if (currentTopic) {
+      const nextQuizIndex =
+        currentTopic.quizzes.findIndex((q) => q.id === quiz.id) + 1;
+      if (nextQuizIndex < currentTopic.quizzes.length) {
+        const nextQuiz = currentTopic.quizzes[nextQuizIndex];
+        setQuiz(nextQuiz);
+        setCurrentQuestionIndex(0); // Reinicia el índice de pregunta
+      } else {
+        console.log("Fin del cuestionario");
+      }
+    }
   };
 
   return (
@@ -57,16 +85,10 @@ export default function QuizDetail() {
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-          }}
-        >
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <PageHeader
-            title={quiz.title}
-            other={`${currentQuizIndex + 1}/${quiz.questions.length}`}
+            title={quiz.question} // Asegúrate de que se muestre el título correcto
+            other={`${currentQuestionIndex + 1}/${optionsCount}`} // Muestra la cantidad de opciones
           />
           <Card
             sx={{
@@ -124,23 +146,25 @@ export default function QuizDetail() {
                 fontSize: { xs: "18px", md: "24px" },
               }}
             >
-              {quiz.questions.length > 0
-                ? quiz.questions[currentQuestionIndex].question
-                : "Loading..."}
+              {quiz ? quiz.question : "Loading..."}
             </Typography>
           </Box>
         </Box>
 
-        <Quiz questionContent={currentQuestion} onSelectOption={selectOption} />
+        <Quiz questionContent={quiz} onSelectOption={selectOption} />
       </Box>
-      <MainButton sx={btnNextMobileNone} variant="contained" onClick={nextQuiz}>
+      <MainButton
+        sx={btnNextMobileNone}
+        variant="contained"
+        onClick={handleNextQuiz}
+      >
         Next
       </MainButton>
       <NextButton
         size="large"
         variant="text"
         endIcon={<ArrowForwardIcon />}
-        onClick={nextQuiz}
+        onClick={handleNextQuiz}
       >
         Next
       </NextButton>

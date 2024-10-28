@@ -1,10 +1,10 @@
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import TopicCard from "./TopicCard.tsx";
-import useTopicQuizzesViewModel from "../viewmodels/useTopicQuizzes.ts";
+import useTopicsViewModel from "../viewmodels/useTopics.ts";
 
 export default function TopicQuizzes() {
-  const { topicQuizzes, goToQuiz } = useTopicQuizzesViewModel();
+  const { allTopics, goToQuiz } = useTopicsViewModel();
 
   return (
     <Box
@@ -30,7 +30,8 @@ export default function TopicQuizzes() {
           gap: 1.5,
         }}
       >
-        {topicQuizzes.map((topic) => (
+        {/* 📃 Cada Tema me direcciona a un Cuestionario por Tema */}
+        {allTopics.map((topic) => (
           <TopicCard key={topic.id} topic={topic} onClick={goToQuiz} />
         ))}
       </Box>
