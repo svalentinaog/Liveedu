@@ -1,149 +1,97 @@
-import PauseIcon from "@mui/icons-material/Pause";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { LinearProgress } from "@mui/material";
 import {
-  IconButton,
-  Typography,
-  Card,
-  Box,
-  LinearProgress,
-} from "@mui/material";
-import { btnNextMobileNone, MainButton, NextButton } from "../styles/mui";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { ITopicQuizzesContent } from "../models/TopicQuizzesContent";
-import Quiz from "../components/Quiz";
-import useTopicQuizzesViewModel from "../viewmodels/useTopicQuizzes";
+  btnNextMobileNone,
+  MainButton,
+  NextButton,
+  QuestionContainer,
+  QuestionText,
+  QuizContentContainer,
+  QuizDetailContainer,
+  QuizDetailCard,
+  ImageContainer,
+  QuizContainer,
+} from "../styles/mui";
+
 import PageHeader from "../components/PageHeader";
+import QuizCard from "../components/QuizCard";
+import { useParams } from "react-router-dom";
+import useTopicsViewModel from "../viewmodels/useTopics";
 
 export default function QuizDetail() {
-  const { id } = useParams<{ id: string }>();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [quiz, setQuiz] = useState<ITopicQuizzesContent | null>(null);
-  const {
-    getQuizById,
-    currentQuizIndex,
-    currentQuestionIndex,
-    nextQuiz,
-    selectOption,
-  } = useTopicQuizzesViewModel();
+  const { topicsByCourse } = useTopicsViewModel();
 
-  useEffect(() => {
-    if (id) {
-      const quizData = getQuizById(Number(id));
-      setQuiz(quizData || null);
-    }
-  }, [id, getQuizById]);
+  const { courseId: courseIdParam, topicId: topicIdParam } = useParams<{
+    courseId: string;
+    topicId: string;
+  }>();
+  const courseId = parseInt(courseIdParam || "0", 10);
+  const topicId = parseInt(topicIdParam || "0", 10);
 
-  if (!quiz) return <Typography>Loading quiz...</Typography>;
+  // Encuentra el curso y el tema específico
+  const topic = topicsByCourse
+    .find((course) => course.courseId === courseId)
+    ?.topics.find((t) => t.id === topicId);
 
-  const progress = ((currentQuestionIndex + 1) / quiz.questions.length) * 100;
-  const currentQuestion = quiz.questions[currentQuestionIndex];
-
-  const handleTogglePlay = () => {
-    setIsPlaying((prev) => !prev);
-  };
+  const progressValue = 100 * (1 / (topic?.quizzes.length || 1));
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: { xs: "90vh", md: "100%" },
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        gap: 15,
-        padding: "20px",
-      }}
-    >
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-          }}
-        >
+    <QuizDetailContainer>
+      <QuizContentContainer>
+        <QuestionContainer>
           <PageHeader
-            title={quiz.title}
-            other={`${currentQuizIndex + 1}/${quiz.questions.length}`}
+            title="Quiz del Tema"
+            other={`1/${topic?.quizzes.length || 0}`}
           />
-          <Card
-            sx={{
-              position: "relative",
-              width: "100%",
-              borderRadius: "20px",
-              background: "var(--white-app)",
-              border: "none",
-              boxShadow: "none",
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
-          >
-            <Box
-              sx={{
-                width: "100%",
-                height: { xs: "250px", md: "500px" },
-                background: "var(--lilac)",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+          <QuizDetailCard>
+            <ImageContainer>
               <img
-                alt="Quiz Watch"
+                alt="Quiz"
+                src="https://confines.net/wp-content/uploads/2018/11/cuestionario.jpg"
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                 }}
               />
-            </Box>
-            <IconButton
-              onClick={handleTogglePlay}
-              sx={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                color: "var(--dark-gray)",
-                background: "var(--gradient)",
-                "&:hover": { bgcolor: "primary.dark" },
-              }}
-            >
-              {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
-            </IconButton>
-          </Card>
-          <LinearProgress variant="determinate" value={progress} />
+            </ImageContainer>
+          </QuizDetailCard>
 
-          <Box>
-            <Typography
-              sx={{
-                fontWeight: "400",
-                fontSize: { xs: "18px", md: "24px" },
-              }}
-            >
-              {quiz.questions.length > 0
-                ? quiz.questions[currentQuestionIndex].question
-                : "Loading..."}
-            </Typography>
-          </Box>
-        </Box>
+          <LinearProgress variant="determinate" value={progressValue} />
 
-        <Quiz questionContent={currentQuestion} onSelectOption={selectOption} />
-      </Box>
-      <MainButton sx={btnNextMobileNone} variant="contained" onClick={nextQuiz}>
+          {topic?.quizzes.map((quiz) => (
+            <div key={quiz.id}>
+              <QuestionText>{quiz.question}</QuestionText>
+              <QuizContainer>
+                {Object.entries(quiz.options).map(([label, text]) => (
+                  <QuizCard
+                    key={label}
+                    option={{
+                      label,
+                      text,
+                      correctAnswer: quiz.correctAnswer,
+                    }}
+                  />
+                ))}
+              </QuizContainer>
+            </div>
+          ))}
+        </QuestionContainer>
+      </QuizContentContainer>
+
+      <MainButton
+        sx={btnNextMobileNone}
+        variant="contained"
+        onClick={() => console.log("Next Quiz")}
+      >
         Next
       </MainButton>
       <NextButton
         size="large"
         variant="text"
-        endIcon={<ArrowForwardIcon />}
-        onClick={nextQuiz}
+        onClick={() => console.log("Next Quiz")}
       >
         Next
       </NextButton>
-    </Box>
+    </QuizDetailContainer>
   );
 }

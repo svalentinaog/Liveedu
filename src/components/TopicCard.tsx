@@ -15,12 +15,12 @@ interface ITopicCardProps {
     description: string;
     duration: number;
   };
-  onClick: (id: number) => void;
+  onClick: () => void;
 }
 
 export default function TopicCard({ topic, onClick }: ITopicCardProps) {
   return (
-    <ContainerTopicCard onClick={() => onClick(topic.id)}>
+    <ContainerTopicCard onClick={onClick} style={{ cursor: "pointer" }}>
       <SubContainerTopicCard>
         <img src={topic.image} alt="Topic Card" />
         <Box>
