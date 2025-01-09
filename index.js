@@ -1,6 +1,6 @@
 import { create, router as _router, defaults } from "json-server";
 const server = create();
-const router = _router("./src/modelsapi/db.json");
+const router = _router("./src/models/api/db.json");
 const middlewares = defaults();
 const port = process.env.PORT || 3000;
 
