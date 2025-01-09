@@ -1,11 +1,13 @@
-import { create, router as _router, defaults } from "json-server";
+import jsonServer from 'json-server';
+const { create, router, defaults } = jsonServer;
+
 const server = create();
-const router = _router("./src/models/api/db.json");
+const routerInstance = router("./src/models/api/db.json");
 const middlewares = defaults();
 const port = process.env.PORT || 3000;
 
 server.use(middlewares);
-server.use(router);
+server.use(routerInstance);
 
 server.listen(port, () => {
   console.log(`JSON Server is running on port ${port}`);
