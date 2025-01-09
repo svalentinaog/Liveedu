@@ -6,7 +6,7 @@ export interface IViewRoute {
 export const ViewRoutes: IViewRoute[] = [
   { path: "/home", viewName: "Home" },
   { path: "/current-balance", viewName: "Current Balance" },
-  { path: "/quizzes", viewName: "Quizzes" },
+  { path: "/topics-to-evaluate", viewName: "Quizzes" },
   { path: "/statistics", viewName: "Statistics" },
   { path: "/profile", viewName: "Profile" },
 ];

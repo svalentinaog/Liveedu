@@ -9,7 +9,7 @@ interface ILessonCardProps {
     title: string;
     description: string;
   };
-  isPlaying: boolean; // Indica si esta lección es la que se está reproduciendo
+  isPlaying: boolean;
   onClick: (id: number) => void;
 }
 
@@ -70,7 +70,6 @@ export default function LessonCard({
             height: "40px",
           }}
         >
-          {/* Cambia el ícono dependiendo de si es la lección seleccionada y está reproduciéndose */}
           {isPlaying ? <PauseIcon /> : <PlayArrowIcon />}
         </IconButton>
       </Box>

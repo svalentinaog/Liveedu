@@ -5,7 +5,6 @@ import SignIn from "./views/SignIn";
 import SignUp from "./views/SignUp";
 import VerificationCode from "./views/VerificationCode";
 import Home from "./views/Home";
-import Quizzes from "./views/Quizzes";
 import Layout from "./components/Layout";
 import Statistics from "./views/Statistics";
 import Profile from "./views/Profile";
@@ -23,7 +22,8 @@ import Buy from "./views/Buy";
 import PromoCode from "./views/PromoCode";
 import AdditionalIncome from "./views/AdditionalIncome";
 import SocialMedia from "./views/SocialMedia";
-import QuizCompleted from "./views/QuizCompleted";
+import Congratulations from "./views/Congratulations";
+import QuizzesByTopics from "./views/QuizzesByTopics";
 
 export default function App() {
   return (
@@ -36,7 +36,7 @@ export default function App() {
 
       <Route element={<Layout />}>
         <Route path="/home" element={<Home />} />
-        <Route path="/quizzes" element={<Quizzes />} />
+        <Route path="/topics-to-evaluate" element={<QuizzesByTopics />} />
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/personal-information" element={<PersonalInformation />} />
@@ -47,8 +47,13 @@ export default function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/courses/:courseId" element={<CourseDetail />} />
         <Route path="/courses/:courseId/topic/:id" element={<TopicDetail />} />
-        <Route path="/quiz/:id" element={<QuizDetail />} />
-        <Route path="/quiz-completed" element={<QuizCompleted />} />
+
+        <Route
+          path="/courses/:courseId/topics/:topicId/quiz"
+          element={<QuizDetail />}
+        />
+
+        <Route path="/congratulations" element={<Congratulations />} />
         <Route path="/current-balance" element={<CurrentBalance />} />
         <Route path="/buy" element={<Buy />} />
         <Route path="/promo-code" element={<PromoCode />} />

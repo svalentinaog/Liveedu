@@ -5,6 +5,18 @@ export interface ILesson {
   video: string;
 }
 
+export interface IQuiz {
+  id: number;
+  question: string;
+  options: {
+    a: string;
+    b: string;
+    c: string;
+    d: string;
+  };
+  correctAnswer: "a" | "b" | "c" | "d";
+}
+
 export interface ITopic {
   id: number;
   title: string;
@@ -12,6 +24,7 @@ export interface ITopic {
   image: string;
   lessons: ILesson[];
   duration: number;
+  quizzes: IQuiz[];
 }
 
 export interface ICoursesContent {

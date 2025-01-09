@@ -5,43 +5,19 @@ import {
   ItemContent,
 } from "../styles/mui";
 
-interface Option {
-  label: string; // letra "A", "B", "C", etc...
-  text: string; // texto de la opción
-  correctAnswer?: string;
-}
-
 interface QuizCardProps {
-  option: Option;
-  isSelected: boolean; // Indica si la opción está seleccionada
-  result: string | null; // Resultado de la verificación
-  onSelect: () => void; // Manejador de selección
+  option: {
+    label: string;
+    text: string;
+    correctAnswer: string;
+  };
 }
 
-export default function QuizCard({
-  option,
-  isSelected,
-  result,
-  onSelect,
-}: QuizCardProps) {
-  const getIconContainerBackgroundColor = () => {
-    if (result === "correct" && isSelected) {
-      return "var(--success)"; // Fondo verde si es correcta
-    }
-    if (result === "incorrect" && isSelected) {
-      return "var(--danger)"; // Fondo rojo si es incorrecta
-    }
-    if (result === "incorrect" && option.label === option.correctAnswer) {
-      return "var(--success)";
-    }
-
-    return isSelected ? "var(--gradient)" : "var(--translucent-lilac)";
-  };
-
+export default function QuizCard({ option }: QuizCardProps) {
   return (
-    <PersonalInfoCardContainer onClick={onSelect}>
+    <PersonalInfoCardContainer>
       <ItemContent>
-        <IconContainer sx={{ background: getIconContainerBackgroundColor() }}>
+        <IconContainer>
           <Typography sx={{ textTransform: "uppercase" }}>
             {option.label}
           </Typography>

@@ -11,7 +11,7 @@ import useSidebar from "../viewmodels/useSidebar";
 
 const Links = [
   { text: "Home", icon: <Home />, path: "/home" },
-  { text: "Quizzes", icon: <Book />, path: "/quizzes" },
+  { text: "Quizzes", icon: <Book />, path: "/topics-to-evaluate" },
   { text: "Statistics", icon: <Timeline />, path: "/statistics" },
   { text: "Profile", icon: <Person />, path: "/profile" },
 ];
