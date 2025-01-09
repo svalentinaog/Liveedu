@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Grid } from "@mui/system";
 import { Typography } from "@mui/material";
 import {
@@ -16,6 +16,14 @@ import CustomTextField from "../components/CustomTextField";
 
 export default function SignIn() {
   const { user, methods } = useUserAuthentication();
+  const navigate = useNavigate(); // Hook de redirección
+
+  const handleLogin = () => {
+    window.alert(
+      "En esta demostración solo podrás explorar el maquetado, es decir, conocer la interfaz de usuario, ya que actualmente el backend está deshabilitado. Si tienes alguna duda, por favor, comunícate conmigo."
+    );
+    navigate("/home");
+  };
 
   return (
     <Grid container spacing={2}>
@@ -47,7 +55,7 @@ export default function SignIn() {
           </CustomForm>
         </FormContent>
         <FormActions>
-          <MainButton>Login</MainButton>
+          <MainButton onClick={handleLogin}>Login</MainButton>
           <Typography variant="subtitle1" sx={{ lineHeight: "normal" }}>
             Don't have an account? <Link to="/sign-up">Sign Up</Link>
           </Typography>

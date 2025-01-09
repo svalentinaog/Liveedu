@@ -49,7 +49,7 @@ export default function App() {
         <Route path="/courses/:courseId/topic/:id" element={<TopicDetail />} />
 
         <Route
-          path="/course/:courseId/topic/:topicId/quiz/:quizId"
+          path="/courses/:courseId/topics/:topicId/quiz"
           element={<QuizDetail />}
         />
 
